@@ -1,0 +1,3669 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="#FBF9F5" name="theme-color"/>
+<meta content="百医可依是成都思图佳科技有限公司推出的中医与民族医机构信息查询、医师排班和门诊预约服务平台。百医可依微信小程序、HarmonyOS 元服务均已上线，并为中医馆及民族医医疗机构提供独立预约挂号小程序和机构后台管理服务。" name="description"/>
+<title>百医可依｜中医与民族医门诊预约服务平台 · 机构预约挂号系统</title>
+<link rel="preload" href="assets/fonts/SourceHanSansSC-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+<link rel="preload" href="assets/fonts/SourceHanSansSC-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+<link rel="preload" href="assets/fonts/SourceHanSansSC-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+<style>
+@font-face{font-family:'Source Han Sans SC';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/SourceHanSansSC-Regular.woff2') format('woff2'),url('assets/09_SourceHanSansSC/OTF/SimplifiedChinese/SourceHanSansSC-Regular.otf') format('opentype')}
+@font-face{font-family:'Source Han Sans SC';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/SourceHanSansSC-Medium.woff2') format('woff2'),url('assets/09_SourceHanSansSC/OTF/SimplifiedChinese/SourceHanSansSC-Medium.otf') format('opentype')}
+@font-face{font-family:'Source Han Sans SC';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/SourceHanSansSC-Bold.woff2') format('woff2'),url('assets/09_SourceHanSansSC/OTF/SimplifiedChinese/SourceHanSansSC-Bold.otf') format('opentype')}
+@font-face{font-family:'Source Han Sans SC';font-style:normal;font-weight:800;font-display:swap;src:url('assets/fonts/SourceHanSansSC-Heavy.woff2') format('woff2'),url('assets/09_SourceHanSansSC/OTF/SimplifiedChinese/SourceHanSansSC-Heavy.otf') format('opentype')}
+@font-face{font-family:'Source Han Sans SC';font-style:normal;font-weight:900;font-display:swap;src:url('assets/fonts/SourceHanSansSC-Heavy.woff2') format('woff2'),url('assets/09_SourceHanSansSC/OTF/SimplifiedChinese/SourceHanSansSC-Heavy.otf') format('opentype')}
+:root{--canvas:#fbf9f5;--paper:#fffefa;--line:#e9dfd3;--ink:#252b27;--quiet:#686d65;--warm:#b98561;--warm-deep:#995e3e;--sand:#f3e9dc;--sandlight:#f8f2e9;--sage:#e9eee7;--forest:#304037;--container:1320px;--shadow:0 24px 60px rgba(58,49,37,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:104px}body{margin:0;background:var(--canvas);color:var(--ink);font-family:"Source Han Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}button,input{font:inherit}button{cursor:pointer}img{display:block;max-width:100%}h1,h2,h3,p{margin-top:0}h1,h2,h3{letter-spacing:-.045em}p{line-height:1.95}h2{font-size:clamp(32px,3.8vw,53px);line-height:1.27;font-weight:760;margin-bottom:24px}.container{width:min(var(--container),calc(100% - 72px));margin:auto}::selection{background:#e9d3b9;color:#2b2e27}
+.skip-link{position:absolute;left:10px;top:-100px;z-index:100;background:#fff;padding:10px}.skip-link:focus{top:10px}
+.site-header{height:86px;background:rgba(251,249,245,.96);border-bottom:1px solid rgba(226,216,204,.78);position:sticky;top:0;z-index:40;backdrop-filter:blur(18px)}.nav-shell{height:100%;display:flex;align-items:center;gap:26px}.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}.brand img{width:47px;height:47px;object-fit:contain}.brand-cn{font-size:24px;line-height:1.05;font-weight:850;letter-spacing:.015em}.brand-en{font-size:9px;letter-spacing:.22em;color:#9d8f7e;margin-top:3px}.primary-nav{display:flex;align-items:center;gap:22px;margin-left:auto}.primary-nav a{font-size:13px;font-weight:650;white-space:nowrap;transition:color .2s}.primary-nav a:hover,.primary-nav a:focus-visible{color:var(--warm-deep)}.nav-utilities{display:flex;align-items:center;gap:13px;margin-left:10px}.nav-phone{font-size:14px;font-weight:760;white-space:nowrap;font-variant-numeric:tabular-nums}.nav-phone:hover{color:var(--warm-deep)}.btn{min-height:47px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 22px;border-radius:999px;background:#fffdfa;border:1px solid #decebe;color:var(--ink);font-size:13px;font-weight:740;line-height:1.25;transition:background .2s,transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(63,43,28,.09)}.btn.dark{background:var(--forest);color:#fff;border-color:var(--forest)}.btn.dark:hover{background:#243128}.btn.small{padding:10px 14px;min-height:41px;font-size:12px}.btn.tertiary{background:transparent;border-color:transparent;color:var(--warm-deep);padding:10px 2px}.arrow{font-size:16px;transform:translateY(-1px)}.menu-toggle{display:none;border:1px solid var(--line);border-radius:14px;background:white;width:42px;height:42px;font-size:22px;align-items:center;justify-content:center}.mobile-panel{display:none}
+.eyebrow{font-size:12px;letter-spacing:.1em;color:var(--warm-deep);font-weight:780;display:flex;align-items:center;gap:12px;margin-bottom:24px}.eyebrow:before{content:"";width:26px;height:1px;background:var(--warm);display:inline-block}.hero{padding:78px 0 52px;position:relative;overflow:hidden}.hero::before{content:"";position:absolute;right:-220px;top:-240px;width:570px;height:570px;border-radius:50%;background:radial-gradient(circle,rgba(238,221,200,.42),rgba(238,221,200,0) 70%);pointer-events:none}.hero-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(425px,.98fr);align-items:center;gap:34px}.hero-copy{padding-bottom:16px;position:relative;z-index:2}.hero h1{font-size:clamp(56px,5.8vw,83px);line-height:1.16;font-weight:800;letter-spacing:-.068em;margin:0 0 27px}.hero h1 span{color:var(--warm-deep)}.hero-intro{font-size:17px;max-width:575px;color:#616761;line-height:2.05;margin-bottom:32px}.action-row{display:flex;align-items:center;gap:11px;flex-wrap:wrap}.credline{display:flex;gap:12px;align-items:center;margin-top:48px;color:#7c7368;font-size:12px}.credline .hairline{height:1px;width:30px;background:var(--warm)}.credline .cred-text{line-height:1.8}.hero-stage{min-height:610px;position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center}.hero-stage:before{content:"";position:absolute;z-index:-2;width:min(530px,100%);height:530px;border-radius:50%;background:#f0e3d4;top:50%;left:50%;transform:translate(-50%,-50%)}.hero-stage:after{content:"";position:absolute;z-index:-1;inset:75px 12px 62px 38px;border:1px solid #ddc9b4;border-radius:50%;transform:rotate(-17deg)}.phone{position:relative;background:#fffefa;border:2px solid #e7cbb5;border-radius:32px;padding:5px;box-shadow:0 18px 40px rgba(68,54,44,.12);overflow:hidden}.phone::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);z-index:2;width:57px;height:13px;background:#222a26;border-radius:0 0 10px 10px}.phone img{border-radius:25px;display:block;width:100%;height:100%;object-fit:cover;object-position:top}.phone-main{height:550px;width:226px;transform:rotate(-2deg);margin-left:40px;box-shadow:0 31px 72px rgba(52,43,33,.26)}.floating-note{position:absolute;z-index:5;display:flex;gap:12px;align-items:center;border:1px solid #ebdccb;background:rgba(255,254,250,.96);backdrop-filter:blur(10px);box-shadow:0 16px 36px rgba(61,48,35,.12);border-radius:18px;padding:12px 16px;max-width:270px}.note-thumb{width:46px;height:62px;object-fit:cover;object-position:top;border-radius:9px;border:1px solid #e5d4c2;box-shadow:0 4px 10px rgba(45,35,25,.08);flex-shrink:0}.floating-note b{font-size:13px;display:block;white-space:nowrap;color:var(--ink)}.floating-note p{font-size:11px;color:var(--quiet);line-height:1.5;margin:3px 0 0;white-space:nowrap}.note-one{top:96px;left:-14px}.note-two{right:-12px;bottom:82px}.hero-side-caption{position:absolute;right:8px;top:78px;writing-mode:vertical-rl;color:#a69482;font-size:10px;letter-spacing:.3em}
+.service-points{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:35px}.service-points article{padding:25px 31px;display:flex;gap:17px;align-items:center;border-right:1px solid var(--line)}.service-points article:first-child{padding-left:8px}.service-points article:last-child{border-right:0}.step-no{font-family:Georgia,serif;font-size:27px;color:#bd8a67;font-weight:500}.service-points strong{display:block;font-size:15px;margin-bottom:3px}.service-points span:last-child{font-size:12px;color:var(--quiet)}
+.section{padding:105px 0}.section-alt{background:#f6f0e7}.section-top{display:flex;align-items:flex-end;justify-content:space-between;gap:38px;margin-bottom:38px}.section-top>div:first-child{max-width:720px}.section-top p{max-width:368px;color:var(--quiet);font-size:15px;margin:0 0 9px}.section-top h2{margin-bottom:0}.section-index{display:inline-flex;gap:10px;align-items:center;font-size:11px;color:#b67b55;font-weight:800;letter-spacing:.16em;margin-bottom:20px}.section-index:after{content:"";height:1px;width:28px;background:#cfa17d}
+.platform-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(460px,1.18fr);gap:32px;align-items:stretch}.platform-panel{background:#fffefa;border:1px solid var(--line);border-radius:26px;min-height:510px;padding:35px;display:flex;flex-direction:column}.platform-panel h3{font-size:24px;margin:0 0 11px}.platform-panel>p{color:var(--quiet);font-size:14px;margin:0 0 20px}.platform-journey{display:grid;gap:6px;margin-top:10px}.journey-row{display:grid;grid-template-columns:40px 1fr;align-items:start;gap:17px;padding:19px 0;border-bottom:1px solid #f0e5da}.journey-row:last-child{border:0}.journey-icon{width:38px;height:38px;background:#f6e9d9;border-radius:13px;display:grid;place-items:center;color:#9e724f;font-size:18px}.journey-row b{font-size:16px}.journey-row p{font-size:13px;color:var(--quiet);margin:5px 0 0}.footlink{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:750;color:var(--warm-deep);margin-top:21px}.footlink:hover{text-decoration:underline;text-underline-offset:4px}
+.platform-triplet{background:#eae5dc;border-radius:26px;padding:26px 20px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;box-shadow:inset 0 2px 8px rgba(0,0,0,.03)}.triplet-track{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:end}.triplet-item{background:#fffefa;border:1px solid #e6d8c8;border-radius:20px;padding:12px 8px 14px;display:flex;flex-direction:column;align-items:center;box-shadow:0 8px 20px rgba(50,40,30,.06);transition:transform .2s,box-shadow .2s}.triplet-item:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(50,40,30,.1)}.triplet-step{display:inline-block;font-size:11px;font-weight:750;color:var(--warm-deep);background:#f7ede3;border-radius:999px;padding:3px 9px;margin-bottom:8px}.phone-sm{width:100%;height:330px;background:#fffefa!important;border:2px solid #e7cbb5!important;border-radius:22px!important;padding:4px!important;box-shadow:0 8px 20px rgba(68,54,44,.1)!important;overflow:hidden;position:relative}.phone-sm::before{content:"";position:absolute;top:5px;left:50%;transform:translateX(-50%);z-index:2;width:44px;height:9px;background:#222a26;border-radius:0 0 8px 8px}.phone-sm img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:18px!important;display:block}.triplet-cap{font-size:11px;color:var(--quiet);text-align:center;margin:8px 0 0;line-height:1.4;font-weight:600}
+.eco-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.eco-card{border-radius:28px;border:1px solid #e7d9ca;background:#fffdf8;min-height:540px;padding:32px;position:relative;overflow:hidden;display:flex;flex-direction:column}.eco-card.sage{background:#ebeee8;border-color:#d9e1d7}.eco-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.eco-type{font-size:12px;letter-spacing:.1em;font-weight:820;color:#9a7253}.live-status{display:flex;align-items:center;gap:6px;font-size:11px;color:#596b5c;background:rgba(255,255,255,.78);border:1px solid #e3e5da;border-radius:100px;padding:7px 11px}.live-status:before{content:"";width:7px;height:7px;border-radius:100%;background:#708b75}.eco-card h3{font-size:clamp(22px,2.1vw,26px);line-height:1.32;font-weight:780;letter-spacing:-.03em;color:#1a1917;margin:8px 0 12px}.eco-title-part{display:inline-block}.eco-card p{font-size:14px;line-height:1.8;color:#657067;max-width:480px;margin:0 0 20px}.eco-card-visual{margin-top:auto;width:100%;display:flex;align-items:center;justify-content:center;border-radius:18px;overflow:hidden}.eco-card-visual img{width:100%;height:auto;max-width:100%;object-fit:contain;display:block;border-radius:16px}
+.product-layout{display:grid;grid-template-columns:minmax(0,0.88fr) minmax(500px,1.12fr);gap:44px;align-items:center}#product{background:#fbf9f5}.product-copy{display:flex;flex-direction:column;align-items:flex-start}.product-copy h2{margin:0 0 20px;max-width:540px}.product-copy p{color:var(--quiet);font-size:15px;line-height:1.9;margin:0 0 26px;max-width:520px}.product-features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px 10px;margin-bottom:32px;width:100%}.product-feature-tag{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#ffffff;border:1px solid #ebdccb;border-radius:999px;padding:9px 12px;color:#1a1917;font-size:13px;font-weight:700;line-height:1.2;box-shadow:0 2px 6px rgba(60,48,36,.02);white-space:nowrap}.product-feature-tag .tag-icon{width:16px;height:16px;color:#a25c21;flex-shrink:0}.product-visual-wrap{position:relative;width:100%;display:flex;align-items:center;justify-content:center}.product-console-img{width:100%;height:auto;max-width:100%;display:block;object-fit:contain}
+.dual-entries-wrapper{margin-top:54px}.dual-entries-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}.entry-card{border-radius:24px;padding:28px 32px 30px;border:1px solid #ebdccb;background:#ffffff;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(60,48,36,.04);transition:transform .25s ease,box-shadow .25s ease;height:100%}.entry-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(50,40,30,.08)}.entry-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.entry-kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:750;letter-spacing:.02em;color:#a25c21}.entry-kicker .entry-dot{width:7px;height:7px;border-radius:50%;background:#a25c21;display:inline-block;flex-shrink:0}.entry-arrow{font-size:17px;color:#a25c21;line-height:1;transition:transform .2s ease}.entry-card:hover .entry-arrow{transform:translateX(3px)}.entry-card-body{display:flex;gap:20px;align-items:flex-start;flex:1}.entry-icon-box{width:68px;height:68px;border-radius:18px;border:1px solid #ebd9c8;background:#fffdf9;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(60,48,36,.03)}.entry-icon-box img{width:46px;height:46px;object-fit:contain;display:block}.entry-card-text{flex:1}.entry-card-text h3{font-size:20px;font-weight:780;color:#1a1917;letter-spacing:-.03em;line-height:1.35;margin:0 0 10px}.entry-card-text p{font-size:14px;line-height:1.8;color:#657067;margin:0}
+.textlink{color:var(--warm-deep);font-weight:750;font-size:13px}.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.quick-card{background:#fffefa;border:1px solid var(--line);border-radius:23px;padding:34px;min-height:230px;display:flex;flex-direction:column}.quick-card .section-index{margin-bottom:12px}.quick-card h3{font-size:25px;line-height:1.4;margin:0 0 14px}.quick-card p{color:var(--quiet);font-size:13px;margin-bottom:auto}.about-line{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:start;border-top:1px solid var(--line);padding-top:47px}.about-line h2{font-size:37px;margin-bottom:14px}.about-line p{font-size:14px;color:var(--quiet);margin-bottom:18px}.about-meta{display:grid;grid-template-columns:90px 1fr;gap:12px 20px;font-size:13px}.about-meta dt{color:#978777}.about-meta dd{margin:0;font-weight:650}
+.join-band{margin-top:65px;border-radius:26px;background:var(--forest);color:#fff;padding:44px 50px;display:flex;align-items:center;justify-content:space-between;gap:28px}.join-band h2{font-size:34px;margin:0 0 12px}.join-band p{font-size:13px;color:#cdd4cd;margin:0}.join-band .btn{background:#fff8ee;color:#29352f;border-color:#fff8ee}.footer{padding:45px 0 55px;background:#f2eee8;border-top:1px solid #e5dcd0}.footer-top{display:flex;justify-content:space-between;gap:40px;align-items:flex-start}.footer .brand-cn{font-size:21px}.footer .brand img{width:42px;height:42px}.footer-links{display:flex;flex-wrap:wrap;gap:18px;max-width:700px}.footer-links a{font-size:12px;color:#777168}.footer-links a:hover{color:#8c593c}.footer-bottom{border-top:1px solid #e1d8ce;margin-top:36px;padding-top:23px;font-size:11px;color:#898279;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:1180px){.primary-nav{gap:14px}.nav-shell{gap:16px}.nav-utilities{gap:9px}.nav-utilities .btn.small{padding:10px 11px}.hero h1{font-size:65px}.hero-layout{grid-template-columns:minmax(0,1fr) minmax(380px,.86fr)}.product-layout{grid-template-columns:1fr 1.15fr}}
+@media(max-width:1020px){.primary-nav,.nav-utilities .btn{display:none}.nav-utilities{margin-left:auto}.menu-toggle{display:inline-flex}.site-header{height:76px}.mobile-panel.open{display:block;position:absolute;left:0;right:0;top:76px;background:#fffefa;border-bottom:1px solid var(--line);padding:15px 36px 25px;box-shadow:0 22px 35px rgba(58,49,37,.08)}.mobile-panel nav{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.mobile-panel nav a{display:block;padding:13px 11px;font-size:13px;border-radius:10px;background:#f7f1e8}.mobile-panel .mobile-actions{display:flex;gap:9px;margin-top:14px}.mobile-panel .mobile-actions .btn{display:inline-flex;flex:1}.hero-layout{grid-template-columns:1fr 1fr}.hero h1{font-size:clamp(45px,5.8vw,64px)}.hero-stage{transform:scale(.88);transform-origin:center}.platform-layout,.product-layout{grid-template-columns:1fr;gap:28px}.platform-panel{padding:26px}.eco-card{padding:25px}.dual-entries-grid{grid-template-columns:1fr}.about-line{gap:20px}}
+@media(max-width:780px){.container{width:min(100% - 42px,var(--container))}.hero{padding-top:52px}.hero-layout,.platform-layout,.product-layout,.about-line{grid-template-columns:1fr}.hero-copy{padding-bottom:0}.hero h1{font-size:clamp(45px,8vw,65px)}.hero-stage{transform:none;min-height:550px}.section{padding:75px 0}.section-top{display:block}.section-top p{max-width:none;margin-top:21px}.service-points{grid-template-columns:1fr 1fr}.service-points article:nth-child(2){border:0}.service-points article:last-child{grid-column:1/-1;border-top:1px solid var(--line)}.triplet-track{grid-template-columns:1fr;gap:16px}.phone-sm{max-width:240px;height:360px;margin:auto}.eco-grid,.quick-grid{grid-template-columns:1fr}.eco-card{min-height:460px}.eco-harmony-wrap{grid-template-columns:1fr;justify-items:center}#product{padding:70px 0}.product-features-grid{grid-template-columns:repeat(4,1fr);gap:8px}.product-feature-tag{padding:7px 8px;font-size:12px;gap:5px}.product-feature-tag .tag-icon{width:14px;height:14px}.entry-card{padding:22px 20px}.join-band{padding:35px 30px;display:block}.join-band .btn{margin-top:22px}.footer-top{display:block}.footer-links{margin-top:25px}}
+@media(max-width:480px){.container{width:calc(100% - 34px)}.site-header{height:70px}.brand img{width:39px;height:39px}.brand-cn{font-size:20px}.brand-en{font-size:8px}.nav-phone{font-size:12px}.nav-shell{gap:9px}.menu-toggle{height:37px;width:37px;border-radius:10px}.mobile-panel.open{top:70px;padding:12px 17px 20px}.mobile-panel nav{grid-template-columns:repeat(2,1fr)}.hero{padding:36px 0 20px}.eyebrow{font-size:10px;margin-bottom:17px}.hero h1{font-size:clamp(43px,12vw,55px);line-height:1.19}.hero-intro{font-size:14px;line-height:1.85}.action-row{gap:8px}.action-row .btn{padding:11px 15px;font-size:12px;min-height:43px}.credline{margin-top:26px;font-size:11px}.hero-stage{min-height:460px;margin:0 -9px}.hero-stage:before{height:340px;width:340px}.hero-stage:after{inset:50px 16px}.phone-main{width:184px;height:445px;margin-left:5px;border-radius:29px}.note-one{top:45px;left:4px}.note-two{right:4px;bottom:30px}.floating-note{padding:9px 11px;border-radius:14px;gap:8px;max-width:190px}.note-thumb{width:36px;height:48px;border-radius:7px}.floating-note b{font-size:11px}.floating-note p{font-size:9px}.hero-side-caption{display:none}.service-points{margin-top:0}.service-points article{padding:19px 10px;gap:10px}.service-points article:first-child{padding-left:0}.service-points strong{font-size:13px}.service-points span:last-child{font-size:10px}.step-no{font-size:24px}.section{padding:66px 0}.section h2{font-size:34px}.section-top{margin-bottom:26px}.section-top p{font-size:13px}.platform-panel{min-height:unset;padding:24px}.platform-panel h3{font-size:22px}.journey-row{padding:14px 0}.eco-card{min-height:unset;padding:24px}.eco-card h3{font-size:21px;line-height:1.35}.eco-card p{font-size:13px}#product{padding:56px 0}.product-features-grid{grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:24px}.product-feature-tag{padding:8px 10px;font-size:12px}.entry-card{padding:20px 18px;border-radius:20px}.entry-card-body{gap:14px}.entry-icon-box{width:56px;height:56px;border-radius:14px}.entry-icon-box img{width:38px;height:38px}.entry-card-text h3{font-size:18px}.entry-card-text p{font-size:13px;line-height:1.75}.quick-card{min-height:210px;padding:25px}.about-line h2{font-size:33px}.about-meta{font-size:12px;grid-template-columns:65px 1fr}.join-band h2{font-size:29px}.footer-links{gap:14px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* BYKY_HERO20261023_START – scoped hero only, no impact to remaining sections */
+/* Layout v7: Fixed Photoshop ruler boundaries (290px left / 150px gap / 290px right at 1920px)
+   - 1920px reference viewport: 1340px container, 550px left column, 150px visual gap, 640px device, 290px margins
+   - Laptop adaptation (1366x768, 1280x720): proportional scaling without overflow or text collisions
+   - Tablet & Mobile: natural dual/single column flow */
+.byky-hero-v3{background:#f9f6f1;padding:clamp(32px,3.4vw,48px) 0 clamp(36px,3.8vw,54px);overflow:hidden}
+.byky-hero-v3::before,.byky-hero-v3 .hero-stage::before,.byky-hero-v3 .hero-stage::after{content:none!important;display:none!important}
+.byky-hero-v3 .hero-copy{padding:0;z-index:2;position:relative}
+.byky-hero-v3 .eyebrow{font-size:14px;font-weight:700;letter-spacing:.025em;margin:0 0 26px;color:#aa632a}
+.byky-hero-v3 .eyebrow::before{background:#c99c69;width:36px}
+.byky-hero-v3 h1{font-size:clamp(34px,3.47vw,50px);font-weight:760;line-height:1.25;letter-spacing:-.05em;margin:0 0 22px;color:#1e2829;max-width:none}
+.byky-hero-v3 h1 .h1-line{display:block;white-space:nowrap;color:#1e2829}
+.byky-hero-v3 h1 .h1-line.h1-accent{color:#a25c21}
+.byky-hero-v3 h1 .h1-divider{font-weight:600;color:inherit;padding:0 .025em}
+.byky-hero-v3 .hero-intro{font-size:16px;max-width:none;line-height:1.9;margin:0 0 10px;color:#5e6262}
+.byky-hero-v3 .hero-culture{font-size:13px;max-width:none;line-height:1.8;margin:0 0 28px;color:#7e8580}
+.byky-hero-v3 .action-row{gap:14px}
+.byky-hero-v3 .action-row .btn{min-height:54px;font-size:15px;padding:14px 28px;box-shadow:none}
+.byky-hero-v3 .action-row .btn.dark{background:#253a2e;border-color:#253a2e;color:#fff}
+.byky-hero-v3 .action-row .btn.dark:hover{background:#314b3b}
+.byky-hero-v3 .action-row .btn:not(.dark){background:transparent;border-color:#d6b68d}
+.byky-hero-v3 .action-row .btn:not(.dark):hover{background:#f4eede}
+.byky-hero-v3 .hero-partner-entry{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-size:13px;color:#717873;line-height:1.4}
+.byky-hero-v3 .hero-partner-icon{width:16px;height:16px;color:#9e724f;flex-shrink:0}
+.byky-hero-v3 .hero-partner-label{color:#6c726d}
+.byky-hero-v3 .hero-partner-link{display:inline-flex;align-items:center;gap:4px;color:var(--warm-deep,#995e3e);font-weight:700;transition:color .2s,text-decoration .2s}
+.byky-hero-v3 .hero-partner-link:hover{color:#784528;text-decoration:underline;text-underline-offset:3px}
+.byky-hero-v3 .hero-partner-link .arrow{font-size:14px;display:inline-block;transition:transform .2s}
+.byky-hero-v3 .hero-partner-link:hover .arrow{transform:translate(2px,-2px)}
+.byky-hero-v3 .hero-stage{width:109.5%!important;min-height:0!important;height:auto!important;margin:0 0 0 -5.2%!important;position:relative;z-index:1}
+.byky-hero-v3 .hero-product-composition{width:100%!important;height:auto!important;max-width:none!important;display:block;object-fit:contain;mix-blend-mode:normal;transform:none;filter:none}
+
+/* WIDE DESKTOP (>= 1600px): 1320px container (300px left, 140px gap, 300px right at 1920px) */
+@media (min-width: 1600px) {
+  .byky-hero-v3 .hero-layout{width:min(var(--container,1320px),calc(100% - 72px))!important;max-width:var(--container,1320px)!important;margin:auto!important;display:grid!important;grid-template-columns:550px 630px!important;column-gap:140px!important;align-items:center!important;min-height:0!important}
+}
+
+/* DESKTOP & LARGE LAPTOP (1367px - 1599px) */
+@media (min-width: 1367px) and (max-width: 1599px) {
+  .byky-hero-v3 .hero-layout{width:min(var(--container),calc(100% - 72px))!important;max-width:var(--container)!important;margin:auto!important;display:grid!important;grid-template-columns:minmax(480px,530px) minmax(0,610px)!important;justify-content:space-between!important;column-gap:clamp(70px,6.5vw,110px)!important;align-items:center!important;min-height:0!important}
+}
+
+/* STANDARD LAPTOP (1201px - 1366px): 1366x768 balanced */
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .byky-hero-v3 .hero-layout{width:min(var(--container),calc(100% - 72px))!important;max-width:var(--container)!important;margin:auto!important;display:grid!important;grid-template-columns:500px minmax(0,580px)!important;justify-content:space-between!important;column-gap:76px!important;align-items:center!important}
+}
+
+/* COMPACT LAPTOP / 720p (1025px - 1200px): 1280x720 tailored */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .byky-hero-v3{padding:22px 0 24px!important}
+  .byky-hero-v3 .hero-layout{width:min(var(--container),calc(100% - 72px))!important;max-width:var(--container)!important;margin:auto!important;display:grid!important;grid-template-columns:480px 1fr!important;column-gap:70px!important;align-items:center!important}
+  .byky-hero-v3 .hero-intro{font-size:15px!important;line-height:1.8!important;margin-bottom:8px!important}
+  .byky-hero-v3 .hero-culture{font-size:12.5px!important;margin-bottom:20px!important}
+}
+
+/* TABLET (861px - 1024px): Proportional dual column */
+@media (min-width: 861px) and (max-width: 1024px) {
+  .byky-hero-v3{padding:22px 0 24px!important}
+  .byky-hero-v3 .hero-layout{width:min(var(--container),calc(100% - 72px))!important;margin:auto!important;display:grid!important;grid-template-columns:minmax(390px,420px) 1fr!important;column-gap:32px!important;align-items:center!important}
+  .byky-hero-v3 .hero-stage{max-width:440px!important}
+  .byky-hero-v3 .hero-intro{font-size:14.5px!important;line-height:1.8!important;margin-bottom:8px!important}
+  .byky-hero-v3 .hero-culture{font-size:12px!important;line-height:1.7!important;margin-bottom:18px!important}
+}
+
+/* MOBILE & NARROW SCREENS (<= 860px): Natural single column */
+@media (max-width: 860px) {
+  .byky-hero-v3{padding:44px 0 28px!important}
+  .byky-hero-v3 .hero-layout{width:min(var(--container),calc(100% - 72px))!important;margin:auto!important;display:grid!important;grid-template-columns:1fr!important;row-gap:0!important}
+  .byky-hero-v3 .hero-copy{max-width:620px!important}
+  .byky-hero-v3 .hero-stage{width:100%!important;margin:26px auto 0!important;max-width:580px!important}
+}
+
+/* MOBILE (<= 560px) */
+@media (max-width: 560px) {
+  .byky-hero-v3{padding:36px 0 22px!important}
+  .byky-hero-v3 .hero-layout{width:calc(100% - 34px)!important;margin:auto!important}
+  .byky-hero-v3 .eyebrow{font-size:11px!important;letter-spacing:0!important;margin-bottom:20px!important}
+  .byky-hero-v3 .eyebrow::before{width:22px!important}
+  .byky-hero-v3 h1{font-size:clamp(30px,8.4vw,36px)!important;letter-spacing:-.04em!important;line-height:1.3!important;margin-bottom:18px!important}
+  .byky-hero-v3 h1 .h1-line{white-space:normal!important}
+  .byky-hero-v3 .hero-intro{font-size:14px!important;line-height:1.85!important;margin-bottom:8px!important}
+  .byky-hero-v3 .hero-culture{font-size:12px!important;line-height:1.75!important;margin-bottom:22px!important}
+  .byky-hero-v3 .action-row{gap:10px!important}
+  .byky-hero-v3 .action-row .btn{min-height:46px!important;font-size:13px!important;padding:11px 16px!important}
+  .byky-hero-v3 .hero-partner-entry{margin-top:16px!important;font-size:12px!important;gap:8px!important;flex-wrap:wrap!important}
+  .byky-hero-v3 .hero-partner-icon{width:15px!important;height:15px!important}
+  .byky-hero-v3 .hero-stage{margin-top:20px!important}
+}
+/* BYKY_HERO20261023_END */
+
+
+/* PLATFORM SECTION STYLES */
+.platform-section{background:var(--canvas,#fbf9f5);padding:92px 0}
+.platform-header{display:flex;justify-content:space-between;align-items:flex-end;gap:36px;margin-bottom:38px}
+.platform-header-left{max-width:680px}
+.platform-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 10px;background:#fdf3e7;border:1px solid #ebd9c8;border-radius:999px;color:#a25c21;font-size:13px;font-weight:750;line-height:1.2;margin-bottom:20px}
+.platform-badge-logo{width:17px;height:17px;object-fit:contain;display:block}
+.platform-heading{font-size:var(--home-h2-size,clamp(28px,1.39vw + 20px,40px));line-height:var(--home-h2-lh,1.30);font-weight:var(--home-h2-weight,700);color:#1a1917;letter-spacing:-.04em;margin:0}
+.platform-heading-accent{color:#a25c21}
+.platform-header-right{max-width:440px;padding-bottom:4px}
+.platform-intro{margin:0;color:#616761;font-size:var(--home-body-size,16px);line-height:var(--home-body-lh,1.75)}
+
+/* BYKY_JOURNEY_COMPONENT_START */
+#resident.platform-section {
+  position: relative;
+  padding: 72px 0 76px;
+  background: #fbf9f5;
+  overflow: visible;
+}
+#resident .resident-anchor-alias {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+/* Integrated 1320px Container Stage (Pure #fbf9f5 background, NO outer card/box/gradient/glow) */
+.resident-stage {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* Reference-Faithful Layout Inside 1320px Container (Left Title+Steps : Right Tight Phone+Zoom+Mascot Cluster) */
+.resident-stage-grid {
+  display: grid;
+  grid-template-columns: 520px minmax(0, 1fr);
+  align-items: stretch;
+  width: 100%;
+  position: relative;
+}
+
+/* Left Column: Section Header (Badge + H2 + Intro) + 4-Step Feature List */
+.resident-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  padding-top: 8px;
+}
+
+#resident .platform-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+#resident .platform-header-left {
+  width: 100%;
+}
+#resident .platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 10px;
+  border-radius: 999px;
+  background: #fdf3e7;
+  border: 1px solid #ebd9c8;
+  color: #a25c21;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+#resident .platform-badge-logo {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  display: block;
+}
+#resident .platform-heading {
+  margin: 0;
+  color: #1a1917;
+}
+#resident .platform-heading-accent {
+  position: relative;
+  display: inline-block;
+  color: #a85c1f;
+}
+#resident .platform-intro {
+  margin: 4px 0 0;
+  color: #3f3d39;
+}
+
+/* 4-Step Feature List (Matches resident-service screens: [Icon] Title | Description) */
+.resident-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.resident-feature-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 18px 18px 20px;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: 1px solid rgba(214, 198, 178, 0.45);
+  transition: background-color 0.28s ease;
+  cursor: pointer;
+}
+.resident-feature-item:last-child,
+.resident-feature-item:has(+ .resident-feature-item.is-active) {
+  border-bottom-color: transparent;
+}
+
+.resident-feature-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  border-radius: 8px 0 0 8px;
+  background: #b56721;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.resident-feature-item.is-active {
+  border-radius: 10px;
+  background: #f4e7d4;
+  border-bottom-color: transparent;
+}
+
+.resident-feature-item.is-active::before {
+  opacity: 1;
+}
+
+.resident-feature-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fbf7f0;
+  border: 1px solid #e5d4be;
+  box-shadow: 0 2px 6px rgba(140, 90, 40, 0.06);
+  color: #9e5a21;
+}
+
+.resident-feature-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.resident-feature-item.is-active .resident-feature-icon {
+  background: #fffdf9;
+  border-color: #d9b892;
+  color: #9e5a21;
+}
+
+.resident-feature-text {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  flex: 1;
+}
+
+.resident-feature-title {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #1f1d1a;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.resident-feature-divider {
+  width: 1px;
+  height: 16px;
+  background: #d2c0ac;
+  flex-shrink: 0;
+}
+
+.resident-feature-desc {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #4a4640;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right Showcase Cluster (Tightly Grouped Borderless Phone + Associated Zoom Callout + Mascot & Speech Bubble) */
+.resident-showcase-cluster {
+  position: relative;
+  width: 100%;
+  min-height: 552px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.resident-phone-column {
+  position: relative;
+  margin-left: 48px;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+/* Minimalist Borderless / Ultra-Thin Outline Phone Frame (No Thick Dark Bezel, No Side Buttons) */
+.resident-phone-shell {
+  position: relative;
+  width: 252px;
+  border-radius: 28px;
+  padding: 5px;
+  background: #fffdf9;
+  border: 1.5px solid #dccab4;
+  box-shadow: 0 14px 34px rgba(58, 42, 24, 0.08), 0 2px 6px rgba(58, 42, 24, 0.03);
+}
+
+.resident-phone-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 409 / 772;
+  border-radius: 23px;
+  overflow: hidden;
+  background: #f6f4f0;
+  border: 1px solid rgba(214, 198, 178, 0.45);
+}
+
+/* Crisp Scene Switching (Preloaded & Decoded, Zero Cross-Fade Text Double Exposure, Zero White Flash) */
+.resident-scene-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  pointer-events: none;
+  background: #f6f4f0;
+}
+.resident-scene-layer.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 3;
+}
+
+.resident-scene-scroll {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.resident-scene-scroll img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.resident-scene-layer[data-scene="5"] .resident-scene-scroll img,
+.resident-scene-layer[data-scene="6"] .resident-scene-scroll img {
+  height: auto;
+  object-fit: contain;
+}
+
+/* Soft Bottom Veil on Service Notice & Records Screenshots to Focus on Active Success Record */
+.resident-scene-layer[data-scene="5"]::after,
+.resident-scene-layer[data-scene="6"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 46%;
+  background: linear-gradient(180deg, rgba(246, 244, 240, 0) 0%, rgba(246, 244, 240, 0.88) 32%, #f6f4f0 74%);
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* In-DOM Desensitization Mask on Booking Confirm Screenshot */
+.resident-mask-symptom {
+  position: absolute;
+  left: 10.4%;
+  top: 67.8%;
+  width: 12.0%;
+  height: 2.5%;
+  background: #ffffff;
+  color: #8c8881;
+  font-size: 10px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  letter-spacing: 0.05em;
+}
+
+/* Target Touch & Highlight Box Inside Phone Interface */
+.resident-btn-highlight {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 10px;
+  border: 1.8px solid #c97a32;
+  background: rgba(201, 122, 50, 0.07);
+  opacity: 0;
+  transform: scale(0.985);
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+.resident-btn-highlight.is-lit {
+  opacity: 1;
+  transform: scale(1);
+}
+.resident-btn-anchor-dot {
+  position: absolute;
+  right: -5px;
+  top: var(--dot-top, 50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c97a32;
+  box-shadow: 0 0 0 3.5px rgba(201, 122, 50, 0.22);
+  transform: translateY(-50%);
+}
+
+/* Dynamic SVG Connector Linking Phone Highlight Target to Floating Zoom Box */
+.resident-zoom-connector {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 13;
+  overflow: visible;
+  opacity: 0;
+  transition: opacity 0.36s ease;
+}
+.resident-zoom-connector.is-open {
+  opacity: 1;
+}
+.resident-zoom-connector-path {
+  fill: none;
+  stroke: #c97a32;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* Localized Floating Zoom Box (Emerges from Target Area into Adjacent Space, 360ms in/out, 4.2-4.4s hold) */
+.resident-zoom-lane {
+  position: absolute;
+  left: 152px;
+  top: calc(100% - 465px);
+  width: 350px;
+  z-index: 14;
+  pointer-events: none;
+}
+.resident-zoom-card {
+  position: relative;
+  width: 100%;
+  background: #fffdf9;
+  border: 1.5px solid #deb98e;
+  border-radius: 16px;
+  padding: 6px;
+  box-shadow: 0 14px 32px rgba(48, 35, 20, 0.12), 0 2px 8px rgba(162, 92, 33, 0.06);
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: left center;
+  transform: translate3d(-10px, var(--zoom-offset-y, 28px), 0) scale(0.94);
+  transition: opacity 0.36s cubic-bezier(0.22, 1, 0.36, 1), transform 0.36s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.36s ease;
+}
+.resident-zoom-card.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, var(--zoom-offset-y, 28px), 0) scale(1);
+}
+.resident-zoom-viewport {
+  position: relative;
+  width: 100%;
+  border-radius: 11px;
+  overflow: hidden;
+  background: #fbf9f5;
+}
+.resident-zoom-img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.resident-zoom-card[data-zoom-layer="6"] {
+  width: 352px;
+}
+.resident-zoom-btn-focus {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: 999px;
+  box-sizing: border-box;
+  border: 1.5px solid #c4762b;
+  box-shadow: 0 0 0 3px rgba(196, 118, 43, 0.16);
+  background: rgba(196, 118, 43, 0.03);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.28s ease;
+}
+.resident-zoom-btn-focus.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Right Mascot Companion (~60% of Phone Height) + Stationary Speech Bubble Above Head */
+.resident-mascot-companion {
+  position: absolute;
+  left: 520px;
+  bottom: 0;
+  width: 280px;
+  height: 410px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* Stationary Brand Speech Bubble Fixed Above Mascot Head (Does Not Bounce with Mascot) */
+.resident-speech-bubble {
+  position: absolute;
+  bottom: 344px;
+  left: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 14px;
+  background: #fffdf9;
+  border: 1px solid #d9b892;
+  box-shadow: 0 4px 12px rgba(58, 41, 24, 0.04);
+  color: #3b2818;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.22s ease;
+}
+.resident-speech-bubble.is-fading {
+  opacity: 0;
+}
+.resident-speech-bubble::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 6px;
+  width: 16px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 14' fill='none' stroke='%23a85c1f' stroke-width='1.8' stroke-linecap='round'%3E%3Cline x1='3' y1='9' x2='5' y2='2'/%3E%3Cline x1='8' y1='10' x2='12' y2='4'/%3E%3Cline x1='12' y1='12' x2='17' y2='9'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+.resident-speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 34%;
+  width: 10px;
+  height: 10px;
+  background: #fffdf9;
+  border-right: 1px solid #d9b892;
+  border-bottom: 1px solid #d9b892;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* V4 Single-Image Mascot Stage: 8 frames (1086x1448, shared canvas, shared baseline), one <img>, src swap only */
+@keyframes bykyMascotBreath {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -1.6px, 0); }
+}
+
+.resident-mascot-stage {
+  position: relative;
+  width: 256px;
+  aspect-ratio: 1086 / 1448;
+  margin-bottom: -10px;
+  animation: bykyMascotBreath 5.2s ease-in-out infinite;
+  will-change: transform;
+}
+.resident-mascot-stage::before {
+  content: "";
+  position: absolute;
+  left: 14%;
+  right: 18%;
+  bottom: 8px;
+  height: 16px;
+  background: radial-gradient(ellipse at center, rgba(94, 67, 41, 0.13) 0%, rgba(94, 67, 41, 0) 72%);
+  pointer-events: none;
+  z-index: 0;
+}
+.resident-mascot-img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Laptop Viewports Adaptation (1440px, 1366px, 1280px) */
+@media (max-width: 1440px) {
+  .resident-stage-grid {
+    grid-template-columns: 492px minmax(0, 1fr);
+  }
+  .resident-showcase-cluster {
+    min-height: 536px;
+  }
+  .resident-phone-column {
+    margin-left: 38px;
+  }
+  .resident-phone-shell {
+    width: 246px;
+    border-radius: 27px;
+  }
+  .resident-phone-viewport {
+    border-radius: 22px;
+  }
+  .resident-zoom-lane {
+    left: 142px;
+    top: calc(100% - 453px);
+    width: 336px;
+  }
+  .resident-zoom-card[data-zoom-layer="6"] {
+    width: 340px;
+  }
+  .resident-mascot-companion {
+    left: 496px;
+    width: 266px;
+    height: 394px;
+  }
+  .resident-speech-bubble {
+    bottom: 328px;
+    left: 44px;
+  }
+  .resident-mascot-stage {
+    width: 245px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .resident-stage-grid {
+    grid-template-columns: 452px minmax(0, 1fr);
+  }
+  .resident-feature-item {
+    padding: 15px 14px 15px 16px;
+    gap: 12px;
+  }
+  .resident-feature-title {
+    font-size: 17.5px;
+  }
+  .resident-feature-desc {
+    font-size: 13.5px;
+  }
+  .resident-showcase-cluster {
+    min-height: 506px;
+  }
+  .resident-phone-column {
+    margin-left: 28px;
+  }
+  .resident-phone-shell {
+    width: 238px;
+    border-radius: 26px;
+  }
+  .resident-phone-viewport {
+    border-radius: 21px;
+  }
+  .resident-zoom-lane {
+    left: 128px;
+    top: calc(100% - 438px);
+    width: 318px;
+  }
+  .resident-zoom-card[data-zoom-layer="6"] {
+    width: 322px;
+  }
+  .resident-mascot-companion {
+    left: 462px;
+    width: 248px;
+    height: 372px;
+  }
+  .resident-speech-bubble {
+    bottom: 306px;
+    left: 34px;
+    font-size: 13px;
+    padding: 9px 15px;
+  }
+  .resident-mascot-stage {
+    width: 229px;
+  }
+}
+
+/* Mobile Single-Column Layout (<= 860px): 1) Header -> 2) 4-Step List -> 3) Phone + Zoom -> 4) Mascot & Speech Bubble */
+@media (max-width: 1060px) {
+  #resident.platform-section {
+    padding: 52px 0 48px;
+  }
+  .resident-stage-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .resident-left-col {
+    display: contents;
+  }
+  #resident .platform-header {
+    order: 1;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+  .resident-feature-list {
+    order: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .resident-feature-item {
+    padding: 12px 10px 12px 12px;
+    gap: 8px;
+    border-radius: 11px;
+    background: rgba(255, 253, 249, 0.65);
+    border: 1px solid rgba(217, 199, 179, 0.55);
+  }
+  .resident-feature-item.is-active {
+    background: #f4e7d4;
+    border-color: #d4ad80;
+  }
+  .resident-feature-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .resident-feature-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+  .resident-feature-text {
+    gap: 8px;
+  }
+  .resident-feature-title {
+    font-size: 15px;
+  }
+  .resident-feature-desc {
+    font-size: 12px;
+    letter-spacing: -0.01em;
+  }
+  .resident-showcase-cluster {
+    order: 3;
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .resident-phone-column {
+    margin-left: 0;
+  }
+  .resident-phone-shell {
+    width: 266px;
+  }
+  .resident-zoom-connector {
+    display: none;
+  }
+  /* Attached Magnifier Docked Directly Below Phone on Mobile */
+  .resident-zoom-lane {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 348px;
+    min-height: 108px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .resident-zoom-card,
+  .resident-zoom-card[data-zoom-layer="6"] {
+    width: 100%;
+    transform: translate3d(0, 0, 0) scale(0.96);
+    transform-origin: center top;
+  }
+  .resident-zoom-card.is-open {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  .resident-mascot-companion {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .resident-speech-bubble {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-bottom: 0;
+    font-size: 13.5px;
+    padding: 9px 15px;
+  }
+  .resident-speech-bubble::after {
+    bottom: auto;
+    left: auto;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  .resident-mascot-stage {
+    width: 120px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resident-feature-item,
+  .resident-feature-item::before,
+  .resident-btn-highlight,
+  .resident-zoom-card,
+  .resident-zoom-connector,
+  .resident-speech-bubble {
+    transition: none !important;
+  }
+  .resident-mascot-stage {
+    animation: none !important;
+  }
+}
+/* BYKY_JOURNEY_COMPONENT_END */
+
+/* PARTNER SECTION STYLES (SCREEN 04) */
+.partner-band{background:#f2e6d7;border:1px solid #e9cca7;border-radius:28px;padding:48px 48px 48px 56px;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,0.94fr);align-items:center;gap:36px;position:relative;overflow:hidden;box-shadow:0 16px 40px rgba(60,48,36,.04)}
+.partner-copy{display:flex;flex-direction:column;align-items:flex-start;position:relative;z-index:2}
+.partner-copy .platform-badge{margin-bottom:20px}
+.platform-badge-icon{width:16px;height:16px;display:block;flex-shrink:0;color:#a25c21}
+.partner-band .partner-heading{font-size:var(--home-h2-size,clamp(28px,1.39vw + 20px,40px));line-height:var(--home-h2-lh,1.30);font-weight:var(--home-h2-weight,700);letter-spacing:-.04em;color:#1a1917;margin:0 0 20px}
+.partner-band .partner-heading .partner-line{display:block;white-space:nowrap}
+.partner-heading-accent{color:#a25c21}
+.partner-desc{font-size:var(--home-body-size,16px);line-height:var(--home-body-lh,1.75);color:#616761;max-width:520px;margin:0 0 28px}
+.partner-action{display:flex;align-items:center;gap:12px}
+.partner-action .btn.dark{background:var(--forest,#304037);color:#fff;border-color:var(--forest,#304037);border-radius:999px;padding:12px 24px;min-height:47px;font-size:13px;font-weight:740}
+.partner-visual-wrap{display:flex;align-items:center;justify-content:center;position:relative;width:100%}
+.partner-visual-img{width:100%;height:auto;max-width:100%;display:block;object-fit:contain}
+@media(max-width:1020px){.partner-band{grid-template-columns:1fr;padding:40px 32px 34px;gap:26px}.partner-copy{max-width:620px}.partner-band .partner-heading{font-size:clamp(26px,4vw,36px)}.partner-visual-wrap{max-width:620px;margin:0 auto}}
+@media(max-width:780px){.partner-band{padding:34px 24px 28px;gap:22px;border-radius:24px}.partner-band .partner-heading{font-size:clamp(22px,4.5vw,28px);margin-bottom:16px}.partner-desc{font-size:14px;line-height:1.8;margin-bottom:22px}.partner-visual-wrap{max-width:520px;margin:6px auto 0}}
+@media(max-width:480px){.partner-band{padding:28px 20px 24px;border-radius:20px;gap:18px}.partner-band .partner-heading{font-size:clamp(19px,5.2vw,23px);line-height:1.32;margin-bottom:14px}.partner-desc{font-size:13px;line-height:1.75;margin-bottom:20px}.partner-visual-wrap{max-width:100%;margin:2px auto 0}.partner-action .btn{width:100%;justify-content:center}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.situjia.cn/#organization","name":"成都思图佳科技有限公司","url":"https://www.situjia.cn/","logo":"assets/logo.png","telephone":"13980452338","description":"成都思图佳科技有限公司拥有“百医可依”与“思图佳”品牌，为医疗机构提供线上预约挂号系统、医师排班管理以及中医与民族医门诊预约服务平台。","brand":[{"@type":"Brand","name":"百医可依","alternateName":"BAIYI KEYI","description":"专注中医与民族医医疗机构信息查询、门诊预约及机构预约管理服务。"},{"@type":"Brand","name":"思图佳","alternateName":"SITUJIA","description":"面向医疗机构的预约管理系统与数字化产品。"}],"contactPoint":[{"@type":"ContactPoint","telephone":"13980452338","contactType":"customer service","areaServed":"CN","availableLanguage":["zh-CN"]}]},{"@type":"WebSite","@id":"https://www.byky.com.cn/#website","name":"百医可依","alternateName":"BAIYI KEYI","publisher":{"@id":"https://www.situjia.cn/#organization"}},{"@type":"WebPage","@id":"https://www.byky.com.cn/#webpage","name":"百医可依｜中医与民族医门诊预约服务平台","isPartOf":{"@id":"https://www.byky.com.cn/#website"},"inLanguage":"zh-CN","description":"了解百医可依微信小程序、HarmonyOS 元服务、机构信息与门诊预约以及机构独立预约挂号小程序。"}]}</script>
+<link href="assets/shell.css" rel="stylesheet"/>
+<style id="site-grid-and-typography">
+/* UNIFIED SITE CONTAINER BASELINE (1320px @ 1920px -> Left=300px, Right=1620px) */
+:root {
+  --site-content-width: 1320px;
+  --container: 1320px;
+
+  /* Typography System V3 Tokens */
+  --home-h2-size: clamp(28px, 1.39vw + 20px, 40px);
+  --home-h2-weight: 700;
+  --home-h2-lh: 1.30;
+
+  --home-h3-size: clamp(21px, 0.5vw + 18.8px, 26px);
+  --home-h3-weight: 650;
+  --home-h3-lh: 1.35;
+
+  --home-h4-size: clamp(18px, 0.2vw + 17.1px, 20px);
+  --home-h4-weight: 600;
+  --home-h4-lh: 1.40;
+
+  --home-body-size: clamp(15px, 0.1vw + 14.5px, 16px);
+  --home-body-lh: 1.75;
+
+  --home-muted-size: 13.5px;
+  --home-muted-lh: 1.60;
+}
+.container {
+  width: min(var(--container, 1320px), calc(100% - 72px)) !important;
+  max-width: var(--container, 1320px) !important;
+  margin-inline: auto !important;
+}
+.wrap-shell {
+  width: min(var(--container, 1320px), calc(100% - 72px)) !important;
+  max-width: var(--container, 1320px) !important;
+  margin-inline: auto !important;
+}
+@media (max-width: 780px) {
+  .container, .wrap-shell, .byky-hero-v3 .hero-layout {
+    width: min(100% - 42px, var(--container, 1320px)) !important;
+  }
+}
+@media (max-width: 480px) {
+  .container, .wrap-shell, .byky-hero-v3 .hero-layout {
+    width: calc(100% - 34px) !important;
+  }
+}
+
+/* UNIFIED HOMEPAGE TYPOGRAPHY SYSTEM (V3) */
+/* Section Headings (H2: 40px Desktop / 28px Mobile, weight 700, lh 1.30) */
+#content .section h2,
+.platform-heading,
+.partner-band .partner-heading,
+.about-line h2 {
+  font-size: var(--home-h2-size, 40px) !important;
+  font-weight: var(--home-h2-weight, 700) !important;
+  line-height: var(--home-h2-lh, 1.30) !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* Function / Feature Titles (H3: 26px Desktop / 21px Mobile, weight 650, lh 1.35) */
+.eco-card h3,
+.quick-card h3 {
+  font-size: var(--home-h3-size, 26px) !important;
+  font-weight: var(--home-h3-weight, 650) !important;
+  line-height: var(--home-h3-lh, 1.35) !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* Card Titles (H4: 20px Desktop / 18px Mobile, weight 600, lh 1.40) */
+.entry-card-text h3 {
+  font-size: var(--home-h4-size, 20px) !important;
+  font-weight: var(--home-h4-weight, 600) !important;
+  line-height: var(--home-h4-lh, 1.40) !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Section Body & Main Paragraphs (16px Desktop / 15px Mobile, weight 400, lh 1.75) */
+.platform-intro,
+.partner-desc,
+#ecosystem .section-top p,
+#product .product-copy > p,
+#knowledge .section-top p,
+#about .about-line p {
+  font-size: var(--home-body-size, 16px) !important;
+  font-weight: 400 !important;
+  line-height: var(--home-body-lh, 1.75) !important;
+  color: #616761 !important;
+}
+
+/* Secondary & Card Paragraphs (13.5-14px Desktop / 12-13px Mobile, weight 400, lh 1.60) */
+.eco-card p,
+.entry-card-text p,
+.quick-card p {
+  font-size: var(--home-muted-size, 13.5px) !important;
+  font-weight: 400 !important;
+  line-height: var(--home-muted-lh, 1.60) !important;
+}
+
+/* CTA Band Title & Text */
+.join-band h2 {
+  font-size: clamp(24px, 2vw, 28px) !important;
+  font-weight: 700 !important;
+  line-height: 1.30 !important;
+}
+.join-band p {
+  font-size: 14px !important;
+  line-height: 1.60 !important;
+}
+@media (max-width: 480px) {
+  .join-band .btn {
+    font-size: 14px !important;
+  }
+}
+
+/* Knowledge & Support 3-Card Section */
+#knowledge {
+  padding-top: 50px;
+}
+#knowledge .knowledge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+#knowledge .knowledge-card {
+  background: #ffffff !important;
+  border: 1px solid #ebdccb !important;
+  border-radius: 18px !important;
+  padding: 0 !important;
+  min-height: unset !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 18px rgba(60, 48, 36, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+}
+#knowledge .knowledge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(50, 40, 30, 0.08);
+}
+#knowledge .knowledge-card-visual {
+  width: 100%;
+  aspect-ratio: 16 / 9.8;
+  overflow: hidden;
+  position: relative;
+  background: #fbf7f1;
+  display: block;
+}
+#knowledge .knowledge-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+#knowledge .knowledge-card:hover .knowledge-card-visual img {
+  transform: scale(1.025);
+}
+#knowledge .knowledge-qa-cover {
+  background: linear-gradient(145deg, #fbf7f1 0%, #f4eadc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 20px;
+  box-sizing: border-box;
+}
+#knowledge .knowledge-qa-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#knowledge .knowledge-qa-row {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #ebd9c8;
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 8px rgba(60, 48, 36, 0.03);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+#knowledge .knowledge-card:hover .knowledge-qa-row {
+  border-color: #dfc8b0;
+}
+#knowledge a.knowledge-qa-row:hover {
+  background: #ffffff;
+  transform: translateX(2px);
+}
+#knowledge .knowledge-qa-q {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #f5ece2;
+  color: #a25c21;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+  line-height: 1;
+}
+#knowledge .knowledge-qa-title {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 650;
+  color: #262c28;
+  margin-left: 10px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#knowledge .knowledge-qa-arrow {
+  color: #a25c21;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-left: 8px;
+  opacity: 0.75;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+#knowledge .knowledge-card:hover .knowledge-qa-arrow {
+  transform: translateX(3px);
+  opacity: 1;
+}
+#knowledge .knowledge-card-body {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+#knowledge .knowledge-card-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 750;
+  letter-spacing: 0.03em;
+  color: #a25c21;
+  margin-bottom: 12px;
+}
+#knowledge .knowledge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a25c21;
+  display: inline-block;
+  flex-shrink: 0;
+}
+#knowledge .knowledge-card h3 {
+  font-size: 20px !important;
+  font-weight: 750 !important;
+  line-height: 1.40 !important;
+  color: #1a1917 !important;
+  letter-spacing: -0.025em !important;
+  margin: 0 0 10px !important;
+}
+#knowledge .knowledge-card p {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.68 !important;
+  color: #616761 !important;
+  margin: 0 0 24px !important;
+}
+#knowledge .knowledge-card .footlink {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 750;
+  color: #a25c21;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+#knowledge .knowledge-card .footlink:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: #8c4915;
+}
+@media (max-width: 960px) {
+  #knowledge .knowledge-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  #knowledge .knowledge-card-body {
+    padding: 22px 22px 24px;
+  }
+}
+
+
+/* ========================================================
+   SECTION: 关于百医可依 × 传统医学文化 (#about) - V1.0 DESIGN SPEC
+   ======================================================== */
+#about {
+  background-color: #FBF9F5 !important;
+  padding-top: 60px;
+  padding-bottom: 52px;
+  border-top: none;
+}
+
+.about-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 38px;
+}
+
+.about-header-left {
+  max-width: 680px;
+}
+
+.about-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fdf3e7;
+  border: 1px solid #ebd9c8;
+  padding: 6px 14px 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.2;
+  color: #a25c21;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.about-pill-logo {
+  width: 17px;
+  height: 17px;
+  display: block;
+  object-fit: contain;
+}
+
+.about-heading {
+  font-size: var(--home-h2-size, 38px) !important;
+  font-weight: 750 !important;
+  line-height: 1.30 !important;
+  letter-spacing: -0.035em !important;
+  color: #252b27 !important;
+  margin: 0 !important;
+}
+
+.about-highlight {
+  color: #a25c21 !important;
+}
+
+.about-header-right {
+  text-align: right;
+  flex-shrink: 0;
+  padding-bottom: 4px;
+}
+
+.about-intro-desc {
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+  color: #616761 !important;
+  margin: 0 !important;
+}
+
+/* Two Feature Cards Grid */
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.about-card {
+  border-radius: 24px;
+  border: 1px solid #ebdccb;
+  box-shadow: 0 4px 20px rgba(60, 48, 36, 0.03);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-3px);
+  border-color: #dfc8b0;
+  box-shadow: 0 16px 36px rgba(50, 40, 30, 0.07);
+}
+
+.about-card-left {
+  background: #ffffff;
+  padding: 34px 34px;
+}
+
+.about-card-right {
+  background: #fdfaf6;
+  padding: 34px 34px;
+}
+
+.about-card-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr);
+  gap: 24px;
+  align-items: center;
+  height: 100%;
+}
+
+.about-card-right .about-card-inner {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.35fr);
+}
+
+.about-card-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  min-height: 250px;
+}
+
+.about-card-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 750;
+  color: #a25c21;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.about-card-kicker .kicker-icon {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  color: #a25c21;
+  flex-shrink: 0;
+}
+
+.about-card-title {
+  font-size: 26px !important;
+  font-weight: 750 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.025em !important;
+  color: #1a1917 !important;
+  margin: 0 0 12px 0 !important;
+}
+
+.about-card-desc {
+  font-size: 13.5px !important;
+  line-height: 1.68 !important;
+  color: #616761 !important;
+  margin: 0 0 24px 0 !important;
+}
+
+.btn-culture-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: #a25c21 !important;
+  color: #ffffff !important;
+  border: 1px solid #a25c21 !important;
+  padding: 10px 22px !important;
+  border-radius: 999px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+  box-shadow: 0 4px 12px rgba(162, 92, 33, 0.2) !important;
+  margin-top: auto;
+}
+
+.btn-culture-primary:hover {
+  background: #8c4915 !important;
+  border-color: #8c4915 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(162, 92, 33, 0.3) !important;
+}
+
+.btn-culture-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: #ffffff !important;
+  color: #a25c21 !important;
+  border: 1.5px solid #d4b494 !important;
+  padding: 9px 20px !important;
+  border-radius: 999px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+  margin-top: auto;
+}
+
+.btn-culture-secondary:hover {
+  background: #fbf5ee !important;
+  border-color: #a25c21 !important;
+  color: #8c4915 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Video Column */
+.about-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #1a1614;
+  box-shadow: 0 8px 24px rgba(28, 25, 23, 0.12);
+}
+
+.about-feature-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-sound-toggle {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(28, 25, 23, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fffefa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.video-sound-toggle:hover {
+  background: rgba(162, 92, 33, 0.9);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: scale(1.08);
+}
+
+.video-sound-toggle:active {
+  transform: scale(0.95);
+}
+
+.video-sound-toggle .sound-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* Mascot Column */
+.about-mascot-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.culture-mascot-img {
+  width: 100%;
+  height: auto;
+  max-height: 275px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(60, 48, 36, 0.05));
+}
+
+/* Bottom CTA */
+.about-bottom-cta {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.about-bottom-cta .footlink-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15.5px;
+  font-weight: 750;
+  color: #a25c21;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.about-bottom-cta .footlink-brand:hover {
+  color: #8c4915;
+  transform: translateX(2px);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1180px) {
+  .about-card-inner,
+  .about-card-right .about-card-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .about-card-copy {
+    min-height: unset;
+  }
+  .btn-culture-primary, .btn-culture-secondary {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .about-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .about-header-right {
+    text-align: left;
+    padding-bottom: 0;
+  }
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 780px) {
+  #about {
+    padding-top: 45px;
+    padding-bottom: 40px;
+  }
+  .about-card-left, .about-card-right {
+    padding: 26px 22px;
+    border-radius: 20px;
+  }
+  .about-card-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .about-video-wrap {
+    aspect-ratio: 16 / 9;
+  }
+  .culture-mascot-img {
+    max-height: 230px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-pill {
+    font-size: 12px;
+    padding: 4px 12px 4px 8px;
+  }
+  .about-heading {
+    font-size: clamp(20px, 5.6vw, 23px) !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.04em !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+  .about-card-title {
+    font-size: 22px !important;
+  }
+  .btn-culture-primary, .btn-culture-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ========================================================
+   SECTION: 让机构预约服务，从这里开始 (#join)
+   ======================================================== */
+/* ========================================================
+   SECTION: 双品牌机构服务入口 (#join)
+   ======================================================== */
+.join-section {
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+.join-banner {
+  border-radius: 24px;
+  background: var(--forest, #304037);
+  color: #ffffff;
+  padding: 44px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 20px 48px rgba(32, 44, 38, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.join-content {
+  max-width: 620px;
+}
+.join-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  color: #dfcaa7;
+  margin-bottom: 12px;
+}
+.join-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #dfcaa7;
+  display: inline-block;
+}
+.join-heading {
+  font-size: clamp(24px, 2.2vw, 32px) !important;
+  font-weight: 750 !important;
+  line-height: 1.30 !important;
+  color: #ffffff !important;
+  margin: 0 0 12px 0 !important;
+  letter-spacing: -0.03em !important;
+}
+.join-desc {
+  font-size: 15px !important;
+  line-height: 1.70 !important;
+  color: #d1d8d2 !important;
+  margin: 0 0 16px 0 !important;
+}
+.join-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(223, 202, 167, 0.12);
+  border: 1px solid rgba(223, 202, 167, 0.32);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fbf4ea;
+  line-height: 1.5;
+}
+.join-brand-badge-icon {
+  color: #dfcaa7;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.join-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 380px;
+  flex-shrink: 0;
+}
+.join-entry-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.join-btn {
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 22px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+}
+.join-btn-primary {
+  background: #fbf4ea !important;
+  color: #25332c !important;
+  border: 1.5px solid #fbf4ea !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+.join-btn-primary:hover {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+.join-btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fbf4ea;
+  border: 1.5px solid rgba(223, 202, 167, 0.55);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+.join-btn-secondary:hover {
+  background: rgba(223, 202, 167, 0.18);
+  border-color: #dfcaa7;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+.join-btn-arrow {
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+.join-btn:hover .join-btn-arrow {
+  transform: translate(2px, -2px);
+}
+.join-entry-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 2px;
+}
+.join-entry-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #dfcaa7;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+.join-entry-sub {
+  font-size: 12px;
+  color: #c4cdc7;
+  line-height: 1.4;
+}
+
+/* ========================================================
+   ECOSYSTEM: 微信小程序独立透明二维码（3D 站立 + 放大悬浮 + 透明背景）
+   ======================================================== */
+.eco-card-wechat {
+  position: relative;
+}
+
+.eco-visual-wechat {
+  position: relative;
+  overflow: visible !important;
+  display: block !important;
+  border-radius: 16px;
+}
+
+.eco-phones-img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 16px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* 独立悬浮二维码舞台：定位于左侧手机底部白框偏左中区域，向上立体站起 */
+.wechat-stand-stage,
+.wechat-qr-floating {
+  position: absolute;
+  left: 36.8%;
+  bottom: 10.2%;
+  width: 23.2%;
+  aspect-ratio: 1 / 1;
+  transform: translateX(-50%);
+  z-index: 12;
+  perspective: 920px;
+  perspective-origin: 50% 88%;
+  pointer-events: auto;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 底部手机白框表面的立体悬浮投影（强化“从手机底部立起来”的空间关系） */
+.wechat-stand-stage::after,
+.wechat-qr-floating::after {
+  content: "";
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  bottom: -6%;
+  height: 11%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(46, 34, 22, 0.20) 0%,
+    rgba(46, 34, 22, 0.08) 54%,
+    rgba(46, 34, 22, 0) 78%
+  );
+  filter: blur(3.5px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transform: scaleX(0.72);
+  transition:
+    opacity 0.68s cubic-bezier(0.22, 1, 0.36, 1) 0.08s,
+    transform 0.68s cubic-bezier(0.22, 1, 0.36, 1) 0.08s;
+}
+
+.wechat-stand-stage:has(.wechat-stand-card.is-standing)::after,
+.wechat-qr-floating.is-standing::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* 独立透明二维码 3D 站立容器：严禁白底块，保留透明 PNG 效果 */
+.wechat-stand-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transform-origin: 50% 94%;
+  backface-visibility: hidden;
+
+  /* 初始态：较低位置 + 稍小 + 稍平躺于左侧手机底部屏幕 */
+  opacity: 0;
+  transform: perspective(920px) rotateX(44deg) rotateY(-6deg) rotateZ(-4.5deg) translateY(22px) scale(0.82);
+}
+
+/* 滚动进入视口后：760ms 平滑站立 + 放大 + 悬浮，停稳后仅做 3px 极慢速呼吸漂浮 */
+.wechat-stand-card.is-standing {
+  animation:
+    wechatQrStandUp3D 0.76s cubic-bezier(0.22, 1, 0.36, 1) 0.06s forwards,
+    wechatQrHoverFloat 5.2s ease-in-out 0.86s infinite;
+}
+
+@keyframes wechatQrStandUp3D {
+  0% {
+    opacity: 0;
+    transform: perspective(920px) rotateX(44deg) rotateY(-6deg) rotateZ(-4.5deg) translateY(22px) scale(0.82);
+  }
+  25% {
+    opacity: 0.95;
+  }
+  72% {
+    opacity: 1;
+    transform: perspective(920px) rotateX(4deg) rotateY(6deg) rotateZ(-0.8deg) translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(920px) rotateX(7deg) rotateY(5.5deg) rotateZ(-1deg) translateY(-2px) scale(1);
+  }
+}
+
+@keyframes wechatQrHoverFloat {
+  0%, 100% {
+    transform: perspective(920px) rotateX(7deg) rotateY(5.5deg) rotateZ(-1deg) translateY(-2px) scale(1);
+  }
+  50% {
+    transform: perspective(920px) rotateX(6deg) rotateY(5deg) rotateZ(-0.8deg) translateY(-5px) scale(1);
+  }
+}
+
+/* 透明二维码原图直接渲染：保留 PNG 透明通道，仅随二维码轮廓投射柔和悬浮阴影与极轻科技微光 */
+.eco-card-visual .wechat-stand-qr-img,
+.wechat-stand-qr-img {
+  position: relative;
+  z-index: 2;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  display: block !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  filter:
+    drop-shadow(0 8px 14px rgba(36, 26, 16, 0.16))
+    drop-shadow(0 2px 4px rgba(36, 26, 16, 0.10)) !important;
+  image-rendering: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .wechat-stand-card.is-standing:hover {
+    animation-play-state: running, paused;
+  }
+  .wechat-stand-card.is-standing:hover .wechat-stand-qr-img {
+    filter:
+      drop-shadow(0 11px 18px rgba(36, 26, 16, 0.22))
+      drop-shadow(0 3px 6px rgba(36, 26, 16, 0.12)) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .wechat-stand-stage,
+  .wechat-qr-floating {
+    left: 36.8%;
+    bottom: 10.0%;
+    width: 23.6%;
+  }
+  .eco-card-visual .wechat-stand-qr-img,
+  .wechat-stand-qr-img {
+    filter:
+      drop-shadow(0 5px 10px rgba(36, 26, 16, 0.15))
+      drop-shadow(0 1px 3px rgba(36, 26, 16, 0.09)) !important;
+  }
+}
+
+/* 减弱动画偏好支持 */
+@media (prefers-reduced-motion: reduce) {
+  .wechat-stand-card,
+  .wechat-stand-card.is-standing {
+    animation: none !important;
+    transition: none !important;
+    transform: perspective(920px) rotateX(7deg) rotateY(5.5deg) rotateZ(-1deg) translateY(-2px) scale(1) !important;
+    opacity: 1 !important;
+  }
+  .wechat-stand-stage::after,
+  .wechat-qr-floating::after {
+    opacity: 1 !important;
+    transform: scaleX(1) !important;
+    transition: none !important;
+  }
+}
+
+/* ========================================================
+   MODAL: 思图佳·其他医疗机构预约系统咨询
+   ======================================================== */
+.situjia-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.situjia-modal[hidden] {
+  display: none !important;
+}
+.situjia-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 28, 23, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: modalFadeIn 0.22s ease-out;
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.situjia-modal-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 580px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 24px 64px rgba(16, 27, 21, 0.32);
+  padding: 32px 36px;
+  box-sizing: border-box;
+  animation: modalSlideUp 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.situjia-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.situjia-modal-title {
+  font-size: 20px !important;
+  font-weight: 750 !important;
+  color: #1d2d24 !important;
+  line-height: 1.35 !important;
+  margin: 0 0 6px 0 !important;
+  letter-spacing: -0.02em !important;
+}
+.situjia-modal-subtitle {
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: #637067 !important;
+  margin: 0 !important;
+}
+.situjia-modal-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #e1e6e2;
+  background: #f7f9f7;
+  color: #49544d;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.18s ease;
+  padding: 0;
+}
+.situjia-modal-close:hover {
+  background: #eef2ef;
+  color: #1d2d24;
+  border-color: #cbd4ce;
+  transform: scale(1.05);
+}
+.situjia-modal-boundary {
+  background: #fbf9f4;
+  border: 1px solid #e9e2d5;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 18px 0 22px;
+}
+.situjia-boundary-entity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #25332c;
+  margin-bottom: 5px;
+}
+.situjia-boundary-tag {
+  display: inline-block;
+  background: #25332c;
+  color: #dfcaa7;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+.situjia-boundary-text {
+  font-size: 12px !important;
+  color: #7b7468 !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+.situjia-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.situjia-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.situjia-form-row {
+  display: flex;
+  gap: 16px;
+}
+.situjia-col-half {
+  flex: 1;
+}
+.situjia-form-label {
+  font-size: 13px;
+  font-weight: 650;
+  color: #25332c;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.situjia-req {
+  color: #c93b2b;
+  font-weight: 700;
+}
+.situjia-opt {
+  color: #8c9790;
+  font-weight: normal;
+  font-size: 12px;
+}
+.situjia-form-input,
+.situjia-form-select,
+.situjia-form-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  color: #203328;
+  background: #ffffff;
+  border: 1.5px solid #d4dad6;
+  border-radius: 10px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.situjia-form-input:focus,
+.situjia-form-select:focus,
+.situjia-form-textarea:focus {
+  border-color: #25332c;
+  box-shadow: 0 0 0 3px rgba(37, 51, 44, 0.12);
+}
+.situjia-form-input.is-invalid,
+.situjia-form-select.is-invalid,
+.situjia-form-textarea.is-invalid {
+  border-color: #c93b2b !important;
+  box-shadow: 0 0 0 3px rgba(201, 59, 43, 0.12) !important;
+}
+.situjia-form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23637067' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+.situjia-form-textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.55;
+}
+.situjia-field-error {
+  font-size: 12px;
+  color: #c93b2b;
+  min-height: 16px;
+  line-height: 1.35;
+}
+.situjia-form-footer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.situjia-privacy-tip {
+  font-size: 12px !important;
+  color: #7d8881 !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  text-align: center;
+}
+.situjia-submit-btn {
+  width: 100%;
+  background: #25332c;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 24px;
+  font-size: 15px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.situjia-submit-btn:hover {
+  background: #19251f;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(25, 37, 31, 0.25);
+}
+
+/* Modal Static Feedback Result */
+.situjia-result-box {
+  animation: modalFadeIn 0.25s ease-out;
+}
+.situjia-result-box[hidden] {
+  display: none !important;
+}
+.situjia-result-header {
+  margin-bottom: 18px;
+}
+.situjia-result-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #eef5f0;
+  border: 1px solid #c2dbcb;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #215a39;
+  margin-bottom: 10px;
+}
+.situjia-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2ea65a;
+}
+.situjia-result-title {
+  font-size: 18px !important;
+  font-weight: 750 !important;
+  color: #1d2d24 !important;
+  margin: 0 0 8px 0 !important;
+}
+.situjia-result-explain {
+  font-size: 13px !important;
+  color: #556259 !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}
+.situjia-summary-card {
+  background: #f8faf8;
+  border: 1px solid #e1e7e3;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 16px 0 20px;
+}
+.situjia-summary-title {
+  font-size: 12.5px;
+  font-weight: 750;
+  color: #25332c;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #d5ded8;
+}
+.situjia-summary-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.situjia-summary-row {
+  display: flex;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.situjia-summary-row dt {
+  width: 76px;
+  color: #6d7971;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+.situjia-summary-row dd {
+  margin: 0;
+  color: #1d2d24;
+  font-weight: 650;
+  word-break: break-all;
+}
+.situjia-result-actions {
+  display: flex;
+  gap: 12px;
+}
+.situjia-copy-btn,
+.situjia-call-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.situjia-copy-btn {
+  background: #25332c;
+  color: #ffffff;
+  border: none;
+}
+.situjia-copy-btn:hover {
+  background: #19251f;
+  transform: translateY(-1px);
+}
+.situjia-call-btn {
+  background: #fbf4ea;
+  color: #25332c;
+  border: 1.5px solid #dfcaa7;
+}
+.situjia-call-btn:hover {
+  background: #ffffff;
+  border-color: #25332c;
+  transform: translateY(-1px);
+}
+.situjia-result-back {
+  margin-top: 14px;
+  text-align: center;
+}
+.situjia-back-link {
+  background: none;
+  border: none;
+  color: #637067;
+  font-size: 12.5px;
+  font-weight: 650;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.15s ease;
+  font-family: inherit;
+}
+.situjia-back-link:hover {
+  color: #25332c;
+  text-decoration: underline;
+}
+
+/* Footer Brand & Semantic Navigation */
+.official-footer .footer-nav a,
+.official-footer .footer-layout nav a,
+.official-footer .footer-layout>div:not(:first-child) a {
+  display: block;
+  font-size: 13px;
+  color: #657168;
+  margin: 0 0 12px;
+  line-height: 1.55;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.official-footer .footer-nav a:hover,
+.official-footer .footer-layout nav a:hover,
+.official-footer .footer-layout>div:not(:first-child) a:hover {
+  color: #a56b49;
+}
+.official-footer .footer-brand-corp {
+  display: block;
+  margin-top: 6px;
+  color: #556259;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1020px) {
+  .about-culture-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .about-culture-entries {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .join-banner {
+    padding: 38px 36px;
+    gap: 28px;
+  }
+  .join-actions {
+    width: 340px;
+  }
+}
+@media (max-width: 780px) {
+  #about {
+    padding-top: 40px;
+  }
+  .about-culture-entries {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .video-aspect-box {
+    aspect-ratio: auto;
+    min-height: 250px;
+  }
+  .join-section {
+    padding-bottom: 50px;
+  }
+  .join-banner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 32px 26px;
+    gap: 24px;
+    border-radius: 20px;
+  }
+  .join-content {
+    max-width: 100%;
+  }
+  .join-actions {
+    width: 100%;
+  }
+  .join-brand-badge {
+    display: flex;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+@media (max-width: 480px) {
+  .about-culture-grid {
+    padding-top: 36px;
+  }
+  .video-inner-content {
+    padding: 24px 20px;
+  }
+  .video-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .culture-entry-card {
+    padding: 22px 20px;
+  }
+  .join-banner {
+    padding: 26px 20px;
+    border-radius: 16px;
+  }
+  .join-actions {
+    width: 100%;
+  }
+  .join-btn {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+  .situjia-modal-container {
+    padding: 22px 18px;
+    border-radius: 16px;
+    max-height: calc(100vh - 24px);
+  }
+  .situjia-form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .situjia-result-actions {
+    flex-direction: column;
+  }
+
+}
+</style>
+</head>
+<body class="" data-page="首页">
+<a class="skip-site" href="#main-content">跳转到正文</a>
+<header class="official-header"><div class="official-nav wrap-shell">
+<a aria-label="百医可依官网首页" class="official-brand" href="index.html"><img alt="百医可依" height="43" src="assets/logo.png" width="43"/><span><strong>百医可依</strong><small>BAIYI KEYI</small></span></a>
+<nav aria-label="网站主导航" class="official-links"><a aria-current="page" href="index.html">首页</a><a href="products/index.html">产品服务</a><a href="solutions/tcm-clinic/index.html">中医馆方案</a><a href="insights/index.html">行业洞察</a><a href="help/index.html">帮助与问答</a><a href="partners/index.html">医疗运营合作</a><a href="about/index.html">关于我们</a></nav>
+<div class="official-actions"><a class="official-phone" href="tel:13980452338">13980452338</a><a class="pill-action" href="join/index.html#account">登录系统 ↗</a><a class="pill-action primary" href="join/index.html">自助入驻 ↗</a></div>
+<button aria-controls="official-mobile" aria-expanded="false" aria-label="展开导航" class="official-menu" type="button">☰</button>
+</div><nav aria-label="手机导航" class="official-mobile" hidden="" id="official-mobile"><a aria-current="page" href="index.html">首页</a><a href="products/index.html">产品服务</a><a href="solutions/tcm-clinic/index.html">中医馆方案</a><a href="insights/index.html">行业洞察</a><a href="help/index.html">帮助与问答</a><a href="partners/index.html">医疗运营合作</a><a href="about/index.html">关于我们</a><a href="tel:13980452338">13980452338</a><a href="join/index.html#account">登录系统 ↗</a><a class="mobile-enroll" href="join/index.html">自助入驻 ↗</a></nav></header>
+<main id="content"><div id="main-content" tabindex="-1"></div>
+<section aria-labelledby="hero-title" class="hero byky-hero-v3" id="top">
+  <div class="container hero-layout">
+    <div class="hero-copy">
+      <div class="eyebrow">百医可依 · 中医与民族医服务平台</div>
+      <h1 id="hero-title"><span class="h1-line">让机构预约更有序，</span><span class="h1-line h1-accent">让居民就医更方便。</span></h1>
+      <p class="hero-intro">为中医馆、诊所提供医师排班与预约管理系统；为居民提供医疗机构查询、医师出诊信息和线下门诊预约服务。</p>
+      <p class="hero-culture">也通过《医家列传》、医学典籍与民族医文化内容，讲述中国传统医学的故事。</p>
+      <div class="action-row"><a class="btn dark" href="products/index.html">了解预约系统 <span aria-hidden="true" class="arrow">↗</span></a><a class="btn" href="#platform">了解居民服务 <span aria-hidden="true" class="arrow">↗</span></a></div>
+      <div class="hero-partner-entry">
+        <svg class="hero-partner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="hero-partner-label">医疗运营服务商？</span>
+        <a class="hero-partner-link" href="partners/index.html">查看伙伴合作 <span aria-hidden="true" class="arrow">↗</span></a>
+      </div>
+    </div>
+    <div class="hero-stage" aria-label="机构预约管理 iPad 与居民端预约手机的产品组合视觉">
+      <img class="hero-product-composition" src="assets/media/hero/hero-dual-device.webp" width="958" height="760" alt="机构预约管理 iPad、居民端预约手机与预约消息提醒的组合视觉" fetchpriority="high" loading="eager" decoding="async" />
+    </div>
+  </div>
+</section>
+<section class="section platform-section" id="resident" aria-labelledby="resident-heading"><span id="platform" class="resident-anchor-alias" aria-hidden="true"></span><div class="container">
+<div class="resident-stage" id="resident-demo-stage" role="region" aria-label="居民服务演示">
+  <div class="resident-stage-grid">
+    <div class="resident-left-col">
+      <div class="platform-header">
+        <div class="platform-header-left">
+          <div class="platform-badge"><img alt="" class="platform-badge-logo" height="17" src="assets/logo.png" width="17"/><span>居民服务平台</span></div>
+          <h2 class="platform-heading" id="resident-heading">从了解机构到预约门诊<br/><span class="platform-heading-accent">每一步都清楚</span></h2>
+        </div>
+        <p class="platform-intro">查找机构、查看医师排班，也能为家人预约。</p>
+      </div>
+      <ul class="resident-feature-list" id="resident-feature-list" aria-label="居民服务步骤">
+        <li class="resident-feature-item is-active" data-step="0">
+          <span class="resident-feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 10h6"/><path d="M12 7v6"/><path d="M10 21v-4h4v4"/></svg>
+          </span>
+          <div class="resident-feature-text">
+            <h3 class="resident-feature-title">查找机构</h3>
+            <span class="resident-feature-divider" aria-hidden="true"></span>
+            <p class="resident-feature-desc">了解机构位置、科室与医师</p>
+          </div>
+        </li>
+        <li class="resident-feature-item" data-step="1">
+          <span class="resident-feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2.5"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 9.5h18"/><path d="M8 14h3"/><path d="M13 14h3"/><path d="M8 17.5h3"/></svg>
+          </span>
+          <div class="resident-feature-text">
+            <h3 class="resident-feature-title">查看排班</h3>
+            <span class="resident-feature-divider" aria-hidden="true"></span>
+            <p class="resident-feature-desc">查看出诊日期与预约时段</p>
+          </div>
+        </li>
+        <li class="resident-feature-item" data-step="2">
+          <span class="resident-feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <div class="resident-feature-text">
+            <h3 class="resident-feature-title">家庭预约</h3>
+            <span class="resident-feature-divider" aria-hidden="true"></span>
+            <p class="resident-feature-desc">为本人或家人预约</p>
+          </div>
+        </li>
+        <li class="resident-feature-item" data-step="3">
+          <span class="resident-feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
+          </span>
+          <div class="resident-feature-text">
+            <h3 class="resident-feature-title">查看记录</h3>
+            <span class="resident-feature-divider" aria-hidden="true"></span>
+            <p class="resident-feature-desc">查看通知与挂号记录，复诊预约更方便</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="resident-showcase-cluster" id="resident-showcase-cluster">
+      <div class="resident-phone-column">
+        <div class="resident-phone-shell" id="resident-phone-shell">
+          <div class="resident-phone-viewport" id="resident-phone-viewport">
+            <div class="resident-scene-layer is-active" data-scene="0">
+              <div class="resident-scene-scroll">
+                <img src="assets/media/resident-service/screens/resident-institution-list.png" alt="成都金牛善元中医诊所等机构列表" width="412" height="771" loading="eager" decoding="async" />
+              </div>
+            </div>
+            <div class="resident-scene-layer" data-scene="1">
+              <div class="resident-scene-scroll">
+                <img src="assets/media/resident-service/screens/resident-institution-detail.png" alt="成都金牛善元中医诊所机构详情与医师入口" width="408" height="772" loading="eager" decoding="async" />
+              </div>
+            </div>
+            <div class="resident-scene-layer" data-scene="2">
+              <div class="resident-scene-scroll">
+                <img src="assets/media/resident-service/screens/resident-doctor-schedule.png" alt="李善元中医师主页与出诊排班" width="409" height="769" loading="eager" decoding="async" />
+              </div>
+            </div>
+            <div class="resident-scene-layer" data-scene="3">
+              <div class="resident-scene-scroll">
+                <img src="assets/media/resident-service/screens/resident-medical-cards.png" alt="我的家庭就诊卡列表" width="407" height="769" loading="eager" decoding="async" />
+              </div>
+            </div>
+            <div class="resident-scene-layer" data-scene="4">
+              <div class="resident-scene-scroll">
+                <img src="assets/media/resident-service/screens/resident-booking-confirm.png" alt="预约确认与挂号信息核对" width="406" height="770" loading="eager" decoding="async" />
+                <span class="resident-mask-symptom" aria-hidden="true">***</span>
+              </div>
+            </div>
+            <div class="resident-scene-layer" data-scene="5">
+              <div class="resident-scene-scroll">
+                <img src="assets/media/resident-service/screens/resident-service-notice.jpg" alt="微信服务通知挂号成功提醒" width="1206" height="2468" loading="eager" decoding="async" />
+              </div>
+            </div>
+            <div class="resident-scene-layer" data-scene="6">
+              <div class="resident-scene-scroll">
+                <img src="assets/media/resident-service/screens/resident-booking-records.png" alt="挂号记录未就诊状态" width="391" height="547" loading="eager" decoding="async" />
+              </div>
+            </div>
+            <div class="resident-btn-highlight" id="resident-btn-highlight" aria-hidden="true">
+              <span class="resident-btn-anchor-dot" id="resident-btn-anchor-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg class="resident-zoom-connector" id="resident-zoom-connector" aria-hidden="true">
+        <path class="resident-zoom-connector-path" id="resident-zoom-connector-path" d="" />
+      </svg>
+      <div class="resident-zoom-lane" id="resident-zoom-lane" aria-hidden="true">
+        <div class="resident-zoom-card" id="resident-zoom-card" data-zoom-scene="0" style="--zoom-offset-y: 36px;">
+          <div class="resident-zoom-viewport" id="resident-zoom-viewport" style="aspect-ratio: 3.920;">
+            <img class="resident-zoom-img" id="resident-zoom-img" src="assets/media/resident-service/screens/resident-institution-list.png" alt="" style="width: 105.042%; left: -2.521%; top: -275.385%;" />
+            <span class="resident-zoom-btn-focus" id="resident-zoom-btn-focus" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+      <div class="resident-mascot-companion" aria-hidden="true">
+        <div class="resident-speech-bubble" id="resident-speech-bubble">先找机构，看看位置和医生</div>
+        <div class="resident-mascot-stage" id="resident-mascot-stage">
+          <img class="resident-mascot-img" id="resident-mascot-img" src="assets/media/resident-service/mascot/s01-find-clinic-01.png" alt="" width="1086" height="1448" loading="eager" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div></section>
+<section class="section section-alt" id="ecosystem"><div class="container"><div class="section-top"><div><div class="platform-badge"><img alt="" class="platform-badge-logo" height="17" src="assets/logo.png" width="17"/><span>微信与华为鸿蒙双端服务</span></div><h2 class="platform-heading">微信与鸿蒙，<br/>百医可依均已上线。</h2></div><p>百医可依微信小程序与 HarmonyOS 元服务预约端均已正式上线，为居民提供不同生态中的中医与民族医信息查询及预约入口。</p></div><div class="eco-grid"><article class="eco-card eco-card-wechat"><div class="eco-head"><span class="eco-type">WECHAT MINI PROGRAM</span><span class="live-status">已上线</span></div><h3>百医可依微信小程序</h3><p>家门口看病，上百医可依。通过微信查找中医与民族医机构，了解医师排班，进入机构页面预约线下门诊。</p><div class="eco-card-visual eco-visual-wechat"><img alt="百医可依微信小程序多端展示" class="eco-phones-img" height="1086" loading="lazy" decoding="async" src="assets/media/platform-channels/wechat/wechat-mini-program-devices.png" width="1448"/><div class="wechat-stand-stage wechat-qr-floating"><div class="wechat-stand-card" id="wechat-stand-card" role="img" aria-label="百医可依微信小程序码"><img src="assets/media/platform-channels/wechat/wechat-mini-program-code.png" alt="百医可依微信小程序码" class="wechat-stand-qr-img" width="430" height="430" decoding="async"/></div></div></div></article><article class="eco-card sage"><div class="eco-head"><span class="eco-type">HARMONYOS ATOMIC SERVICE</span><span class="live-status">已上线</span></div><h3>华为鸿蒙（HarmonyOS）<span class="eco-title-part">元服务预约端</span></h3><p>百医可依鸿蒙元服务预约端已上线，可在鸿蒙生态中提供中医、民族医机构信息与门诊预约服务入口。</p><div class="eco-card-visual"><img alt="华为鸿蒙（HarmonyOS）元服务预约端展示" height="1086" loading="lazy" src="assets/media/platform-channels/harmonyos/harmonyos-reservation-entry.png" width="1448"/></div></article></div></div></section>
+<section class="section" id="product"><div class="container"><div class="product-layout"><div class="product-copy"><div class="platform-badge"><img alt="百医可依" class="platform-badge-logo" height="17" src="assets/logo.png" width="17"/><span>机构预约管理系统</span></div><h2>给自己的中医馆，<br/>一个更好用的<br/><span style="color:var(--warm-deep)">预约挂号系统。</span></h2><p>面向中医馆、诊所及民族医医疗机构，提供医师排班、预约挂号、到诊管理与机构后台服务。微信预约可选择机构独立小程序，也可使用百医可依平台机构服务页。</p><div class="product-features-grid"><div class="product-feature-tag"><svg class="tag-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 20 20"><circle cx="10" cy="6" r="3.2"></circle><path d="M4 16.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"></path></svg><span>医师排班</span></div><div class="product-feature-tag"><svg class="tag-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 20 20"><rect height="13" rx="3" width="14" x="3" y="4"></rect><line x1="14" x2="14" y1="2" y2="5"></line><line x1="6" x2="6" y1="2" y2="5"></line><line x1="3" x2="17" y1="8.5" y2="8.5"></line><path d="M7.5 12.5h2M12 12.5h.5"></path></svg><span>预约挂号</span></div><div class="product-feature-tag"><svg class="tag-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 20 20"><rect height="11" rx="2.5" width="15" x="2.5" y="4.5"></rect><line x1="2.5" x2="17.5" y1="8.5" y2="8.5"></line><circle cx="6" cy="12" fill="currentColor" r="1"></circle></svg><span>在线支付</span></div><div class="product-feature-tag"><svg class="tag-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 20 20"><path d="M10 3a4.5 4.5 0 0 0-4.5 4.5c0 4-1.5 5-1.5 5h12s-1.5-1-1.5-5A4.5 4.5 0 0 0 10 3z"></path><path d="M8.5 15.5a1.8 1.8 0 0 0 3 0"></path></svg><span>消息提醒</span></div><div class="product-feature-tag"><svg class="tag-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 20 20"><path d="M3.5 7V4.5A1 1 0 0 1 4.5 3.5H7"></path><path d="M13 3.5h2.5a1 1 0 0 1 1 1V7"></path><path d="M16.5 13v2.5a1 1 0 0 1-1 1H13"></path><path d="M7 16.5H4.5a1 1 0 0 1-1-1V13"></path><rect fill="currentColor" height="2.5" rx=".5" width="2.5" x="6.5" y="6.5"></rect><rect fill="currentColor" height="2.5" rx=".5" width="2.5" x="11" y="11"></rect></svg><span>扫码签到</span></div><div class="product-feature-tag"><svg class="tag-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 20 20"><circle cx="7" cy="6" r="2.5"></circle><path d="M2.5 15c0-2.5 2-4 4.5-4s4.5 1.5 4.5 4"></path><circle cx="14" cy="7" r="2"></circle><path d="M12.5 14.5c.3-1.8 1.8-3 3.5-3s3 1 3.5 2.5"></path></svg><span>排队叫号</span></div><div class="product-feature-tag"><svg class="tag-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 20 20"><path d="M6.5 4.5A2 2 0 0 1 8.5 3h3a2 2 0 0 1 2 1.5H15a2 2 0 0 1 2 2V16a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2h1.5z"></path><line x1="7" x2="13" y1="10" y2="10"></line><line x1="7" x2="11" y1="13.5" y2="13.5"></line></svg><span>报告管理</span></div><div class="product-feature-tag"><svg class="tag-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 20 20"><path d="M16.5 9A6.5 6.5 0 0 0 5 6L3.5 7.5"></path><path d="M3.5 3.5v4h4"></path><path d="M3.5 11A6.5 6.5 0 0 0 15 14l1.5-1.5"></path><path d="M16.5 16.5v-4h-4"></path><polygon fill="currentColor" points="10 7.5 10.8 9.2 12.6 9.4 11.3 10.6 11.6 12.4 10 11.5 8.4 12.4 8.7 10.6 7.4 9.4 9.2 9.2"></polygon></svg><span>医生评价</span></div></div><div class="action-row"><a class="btn dark" href="products/index.html">了解产品服务 <span aria-hidden="true" class="arrow">↗</span></a><a class="btn" href="solutions/tcm-clinic/index.html">中医馆选型参考 <span aria-hidden="true" class="arrow">↗</span></a></div></div><div class="product-visual-wrap"><img alt="百医可依机构预约挂号管理系统后台控制台实机界面" class="product-console-img" height="650" loading="lazy" src="assets/media/appointment-system/appointment-admin-dashboard.png" width="960"/></div></div><div class="dual-entries-wrapper"><div class="dual-entries-grid"><article class="entry-card"><div class="entry-card-top"><span class="entry-kicker"><span class="entry-dot"></span>机构自有预约入口</span><span aria-hidden="true" class="entry-arrow">→</span></div><div class="entry-card-body"><div class="entry-icon-box"><img alt="机构独立微信小程序" height="54" loading="lazy" src="assets/media/appointment-system/appointment-entry-wechat.png" width="54"/></div><div class="entry-card-text"><h3>机构独立微信小程序</h3><p>适合希望使用本机构主体运营独立预约小程序的医疗机构，按微信平台要求完成注册、认证与维护。</p></div></div></article><article class="entry-card"><div class="entry-card-top"><span class="entry-kicker"><span class="entry-dot"></span>百医可依平台预约入口</span><span aria-hidden="true" class="entry-arrow">→</span></div><div class="entry-card-body"><div class="entry-icon-box"><img alt="平台机构服务页" height="54" loading="lazy" src="assets/logo.png" width="54"/></div><div class="entry-card-text"><h3>平台机构服务页</h3><p>入驻百医可依，按流程开通机构专属预约主页，无需自行申请独立微信小程序，也无需支付独立小程序的微信认证费；机构可将专属页面链接添加到自己的公众号「预约挂号」菜单，患者点击即可直达本机构，查看医师排班并预约门诊。</p></div></div></article></div></div></div></section>
+<section class="section" id="partners" style="padding-top:0"><div class="container"><div class="partner-band"><div class="partner-copy"><div class="platform-badge"><svg class="platform-badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>医疗运营合作</span></div><h2 class="partner-heading"><span class="partner-line">为医疗运营团队</span><span class="partner-line partner-heading-accent">提供成熟的预约产品支持</span></h2><p class="partner-desc">面向医疗运营团队、医疗数字化服务商及区域运营伙伴，提供可实际落地的预约产品、开通协助与持续服务支持，让合作团队更专注于服务机构本身。</p><div class="partner-action"><a class="btn dark" href="partners/index.html">了解合作方式 <span aria-hidden="true" class="arrow">↗</span></a></div></div><div class="partner-visual-wrap"><img alt="百医可依医疗运营合作能力展示：成熟的产品能力、开通与配置协助、持续维护与服务、灵活的合作方式" class="partner-visual-img" height="545" loading="lazy" src="assets/media/operating-partners/operating-partner-illustration.png" width="771"/><div class="partner-features-accessible" aria-label="医疗运营合作能力" style="position:absolute;left:0;top:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);border:0"><span>成熟的产品能力</span><span>开通与配置协助</span><span>持续维护与服务</span><span>灵活的合作方式</span></div></div></div></div></section>
+<section class="section" id="knowledge" style="padding-top:50px"><div class="container"><div class="section-top"><div><div class="platform-badge"><svg class="platform-badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 2H6c-1.2 0-2 .8-2 2v16c0 1.2.8 2 2 2h13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1zm-1 18H6.5c-.8 0-1.5-.7-1.5-1.5S5.7 17 6.5 17H18v3zm0-5H6.5c-.3 0-.6.1-.8.2-.4-.4-.7-.7-.7-1.2V4c0-.6.4-1 1-1H18v12z"/></svg><span>选型与服务支持</span></div><h2>从产品选型，到实际使用，<br/>都有清楚的答案。</h2></div><p>围绕中医与民族医医疗机构，提供预约系统选型参考、行业资料与开通使用帮助。</p></div><div class="quick-grid knowledge-grid">
+  <article class="quick-card knowledge-card">
+    <a class="knowledge-card-visual" href="insights/tcm-booking-system-checklist/index.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/media/industry-insights/insight-appointment-system.png" alt="中医馆预约系统选型指南" width="1609" height="977" loading="lazy" />
+    </a>
+    <div class="knowledge-card-body">
+      <div class="knowledge-card-kicker"><span class="knowledge-dot"></span>选型指南</div>
+      <h3>中医馆预约系统，应该怎样选？</h3>
+      <p>比较不同预约入口的适用场景，了解功能配置与选型要点。</p>
+      <a class="footlink" href="insights/tcm-booking-system-checklist/index.html">查看选型指南 <span aria-hidden="true" class="arrow">↗</span></a>
+    </div>
+  </article>
+
+  <article class="quick-card knowledge-card">
+    <a class="knowledge-card-visual" href="insights/index.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/media/industry-insights/insight-tcm-policy.png" alt="读懂行业变化，做更有依据的选择" width="1672" height="941" loading="lazy" />
+    </a>
+    <div class="knowledge-card-body">
+      <div class="knowledge-card-kicker"><span class="knowledge-dot"></span>行业洞察</div>
+      <h3>读懂行业变化，做更有依据的选择。</h3>
+      <p>关注相关政策、权威统计与中医医疗机构数字化发展。</p>
+      <a class="footlink" href="insights/index.html">阅读行业洞察 <span aria-hidden="true" class="arrow">↗</span></a>
+    </div>
+  </article>
+
+  <article class="quick-card knowledge-card">
+    <div class="knowledge-card-visual knowledge-qa-cover">
+      <div class="knowledge-qa-list">
+        <a class="knowledge-qa-row" href="help/wechat-setup/index.html">
+          <span class="knowledge-qa-q">问</span>
+          <span class="knowledge-qa-title">医疗机构微信小程序如何注册与备案？</span>
+          <span class="knowledge-qa-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="knowledge-qa-row" href="help/index.html">
+          <span class="knowledge-qa-q">问</span>
+          <span class="knowledge-qa-title">微信小程序公安备案如何办理？</span>
+          <span class="knowledge-qa-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="knowledge-qa-row" href="help/index.html">
+          <span class="knowledge-qa-q">问</span>
+          <span class="knowledge-qa-title">公众号菜单如何接入预约挂号？</span>
+          <span class="knowledge-qa-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="knowledge-card-body">
+      <div class="knowledge-card-kicker"><span class="knowledge-dot"></span>帮助与问答</div>
+      <h3>小程序开通与认证，有清楚的答案。</h3>
+      <p>解答机构入驻、微信小程序开通、认证与预约管理使用中的常见问题。</p>
+      <a class="footlink" href="help/index.html">查看帮助与问答 <span aria-hidden="true" class="arrow">↗</span></a>
+    </div>
+  </article>
+</div></div></section>
+<section class="section" id="about">
+  <div class="container">
+    <!-- Top Header: Category & Headline (Left) + Subtitle (Right) -->
+    <div class="about-header-row">
+      <div class="about-header-left">
+        <div class="about-pill">
+          <img src="assets/logo.png" alt="百医可依" class="about-pill-logo" width="20" height="20">
+          <span>关于百医可依</span>
+        </div>
+        <h2 class="about-heading">专注中医与民族医，<br/>认真做好<span class="about-highlight">预约服务与文化传承</span>。</h2>
+      </div>
+      <div class="about-header-right">
+        <p class="about-intro-desc">提供真实清晰的门诊查询与预约服务，<br/>发掘传统医学的历史脉络，让古老医道走入日常。</p>
+      </div>
+    </div>
+
+    <!-- Two Feature Cards -->
+    <div class="about-cards-grid">
+      <!-- Left Card: 《医家列传》 with Video -->
+      <article class="about-card about-card-left">
+        <div class="about-card-inner">
+          <div class="about-card-copy">
+            <div>
+              <div class="about-card-kicker">
+                <svg class="kicker-icon play-icon" viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+                  <polygon points="6,4 20,12 6,20"/>
+                </svg>
+                <span>AI 原创 · 医家故事</span>
+              </div>
+              <h3 class="about-card-title">《医家列传》</h3>
+              <p class="about-card-desc">从扁鹊、华佗，到张仲景、孙思邈、李时珍，溯源千百年来临床医家的真实行医脉络与生命温度。</p>
+            </div>
+            <a class="btn-culture-primary" href="insights/index.html">观看医家故事 <span aria-hidden="true" class="arrow">↗</span></a>
+          </div>
+
+          <div class="about-video-wrap">
+            <video id="about-culture-video" class="about-feature-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/media/brand-culture/culture-sun-simiao-poster.jpg">
+              <source src="assets/media/brand-culture/culture-sun-simiao.mp4" type="video/mp4">
+            </video>
+            <button type="button" id="about-sound-toggle" class="video-sound-toggle" aria-label="开启视频声音" aria-pressed="false" title="开启视频声音">
+              <svg class="sound-icon icon-muted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <line x1="23" y1="9" x2="17" y2="15"></line>
+                <line x1="17" y1="9" x2="23" y2="15"></line>
+              </svg>
+              <svg class="sound-icon icon-unmuted" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Right Card: 民族医文化 with Mascots -->
+      <article class="about-card about-card-right">
+        <div class="about-card-inner">
+          <div class="about-card-copy">
+            <div>
+              <div class="about-card-kicker">
+                <svg class="kicker-icon book-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                <span>传统医学文化</span>
+              </div>
+              <h3 class="about-card-title">民族医文化</h3>
+              <p class="about-card-desc">走近藏医、蒙医、维吾尔医、苗医、壮医、傣医、瑶医、朝医等多元医学，认识不同地城孕育的传统医学文化。</p>
+            </div>
+            <a class="btn-culture-secondary" href="insights/index.html">探索民族医文化 <span aria-hidden="true" class="arrow">↗</span></a>
+          </div>
+
+          <div class="about-mascot-wrap">
+            <img src="assets/media/brand-culture/culture-medical-mascots.png" alt="百医可依民族医公仔：傣医、藏医、苗医、蒙医、维吾尔医、壮医" class="culture-mascot-img" loading="eager" decoding="async" width="1320" height="945">
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Bottom Brand Link -->
+    <div class="about-bottom-cta">
+      <a class="footlink-brand" href="about/index.html">了解百医可依 <span aria-hidden="true" class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Section: Dual-Brand Service Entry -->
+<section class="section join-section" id="join">
+  <div class="container">
+    <div class="join-banner">
+      <div class="join-content">
+        <div class="join-kicker"><span class="join-dot"></span>机构服务 · 预约接入</div>
+        <h2 class="join-heading">让机构预约服务，从这里开始。</h2>
+        <p class="join-desc">根据医疗机构类型与实际需求，选择适合的预约服务。</p>
+        <div class="join-brand-badge">
+          <span class="join-brand-badge-icon" aria-hidden="true">✦</span>
+          <span>百医可依与思图佳均为成都思图佳科技有限公司旗下品牌。</span>
+        </div>
+      </div>
+      <div class="join-actions">
+        <!-- Entry 1: TCM & Ethnic Medicine (Baiyi Keyi) -->
+        <div class="join-entry-card join-entry-primary">
+          <a class="join-btn join-btn-primary" href="join/index.html">
+            <span class="join-btn-text">中医与民族医机构自助入驻</span>
+            <span aria-hidden="true" class="join-btn-arrow">↗</span>
+          </a>
+          <div class="join-entry-meta">
+            <span class="join-entry-dot"></span>
+            <span class="join-entry-sub">百医可依 · 机构信息展示与预约管理服务</span>
+          </div>
+        </div>
+
+        <!-- Entry 2: Other Medical Institutions (Situjia) -->
+        <div class="join-entry-card join-entry-secondary">
+          <button type="button" class="join-btn join-btn-secondary" id="btn-open-situjia-consult" aria-haspopup="dialog" aria-controls="situjia-consult-modal">
+            <span class="join-btn-text">其他医疗机构预约系统咨询</span>
+            <span aria-hidden="true" class="join-btn-arrow">↗</span>
+          </button>
+          <div class="join-entry-meta">
+            <span class="join-entry-dot"></span>
+            <span class="join-entry-sub">思图佳 · 医疗机构预约管理系统</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<!-- Situjia Medical Institution Consultation Modal -->
+<div id="situjia-consult-modal" class="situjia-modal" role="dialog" aria-modal="true" aria-labelledby="situjia-modal-title" aria-describedby="situjia-modal-desc" hidden>
+  <div class="situjia-modal-backdrop" id="situjia-modal-backdrop"></div>
+  <div class="situjia-modal-container" role="document">
+    <div class="situjia-modal-header">
+      <div class="situjia-modal-titles">
+        <h3 class="situjia-modal-title" id="situjia-modal-title">医疗机构预约系统需求咨询</h3>
+        <p class="situjia-modal-subtitle" id="situjia-modal-desc">请留下机构信息与预约管理需求，我们将安排工作人员与您联系。</p>
+      </div>
+      <button type="button" class="situjia-modal-close" id="btn-close-situjia-modal" aria-label="关闭咨询窗口">✕</button>
+    </div>
+
+    <!-- Brand Entity and Business Boundary Statement -->
+    <div class="situjia-modal-boundary">
+      <div class="situjia-boundary-entity">
+        <span class="situjia-boundary-tag">服务主体</span>
+        <strong>成都思图佳科技有限公司</strong>
+      </div>
+      <p class="situjia-boundary-text">本入口为医疗预约管理系统产品咨询，不属于百医可依平台机构入驻。</p>
+    </div>
+
+    <!-- Form Section -->
+    <form id="situjia-consult-form" class="situjia-modal-form" novalidate>
+      <div class="situjia-form-body">
+        <div class="situjia-form-group">
+          <label for="consult-org-name" class="situjia-form-label">医疗机构名称 <span class="situjia-req" aria-label="必填">*</span></label>
+          <input type="text" id="consult-org-name" name="orgName" class="situjia-form-input" placeholder="请输入医疗机构完整名称" required autocomplete="off" />
+          <div class="situjia-field-error" id="err-org-name" aria-live="polite"></div>
+        </div>
+
+        <div class="situjia-form-group">
+          <label for="consult-org-type" class="situjia-form-label">机构类型 <span class="situjia-req" aria-label="必选">*</span></label>
+          <div class="situjia-select-wrap">
+            <select id="consult-org-type" name="orgType" class="situjia-form-select" required>
+              <option value="" disabled selected>请选择机构类型</option>
+              <option value="综合门诊 / 诊所">综合门诊 / 诊所</option>
+              <option value="专科门诊">专科门诊</option>
+              <option value="其他医疗机构">其他医疗机构</option>
+            </select>
+          </div>
+          <div class="situjia-field-error" id="err-org-type" aria-live="polite"></div>
+        </div>
+
+        <div class="situjia-form-row">
+          <div class="situjia-form-group situjia-col-half">
+            <label for="consult-contact-name" class="situjia-form-label">联系人姓名 <span class="situjia-req" aria-label="必填">*</span></label>
+            <input type="text" id="consult-contact-name" name="contactName" class="situjia-form-input" placeholder="请输入联系人姓名" required autocomplete="name" />
+            <div class="situjia-field-error" id="err-contact-name" aria-live="polite"></div>
+          </div>
+          <div class="situjia-form-group situjia-col-half">
+            <label for="consult-phone" class="situjia-form-label">联系电话 <span class="situjia-req" aria-label="必填">*</span></label>
+            <input type="tel" id="consult-phone" name="phone" class="situjia-form-input" placeholder="请输入11位手机号码" maxlength="11" required autocomplete="tel" />
+            <div class="situjia-field-error" id="err-phone" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="situjia-form-group">
+          <label for="consult-demand" class="situjia-form-label">预约管理需求简述 <span class="situjia-opt">(选填)</span></label>
+          <textarea id="consult-demand" name="demand" class="situjia-form-textarea" rows="3" placeholder="请简要描述您的预约管理需求，如科室数量、排班特点等"></textarea>
+        </div>
+      </div>
+
+      <div class="situjia-form-footer">
+        <p class="situjia-privacy-tip">提交的信息仅用于预约系统咨询对接，我们将严格保密。</p>
+        <button type="submit" class="situjia-submit-btn" id="btn-submit-consult">提交咨询需求</button>
+      </div>
+    </form>
+
+    <!-- Static Feedback Result Container (hidden by default) -->
+    <div id="situjia-result-box" class="situjia-result-box" hidden>
+      <div class="situjia-result-header">
+        <div class="situjia-result-status-badge">
+          <span class="situjia-status-dot"></span>
+          <span>表单校验通过 · 待后端接入</span>
+        </div>
+        <h4 class="situjia-result-title">已完成咨询信息登记准备</h4>
+        <p class="situjia-result-explain">
+          当前官网处于静态展示环境，数据未接入生产后台。请通过以下方式直接联系服务团队，或复制已整理的咨询需求发送给我们：
+        </p>
+      </div>
+
+      <div class="situjia-summary-card">
+        <div class="situjia-summary-title">机构咨询需求明细</div>
+        <dl class="situjia-summary-list">
+          <div class="situjia-summary-row"><dt>医疗机构：</dt><dd id="summary-org-name">-</dd></div>
+          <div class="situjia-summary-row"><dt>机构类型：</dt><dd id="summary-org-type">-</dd></div>
+          <div class="situjia-summary-row"><dt>联 系 人：</dt><dd id="summary-contact-name">-</dd></div>
+          <div class="situjia-summary-row"><dt>联系电话：</dt><dd id="summary-phone">-</dd></div>
+          <div class="situjia-summary-row"><dt>需求简述：</dt><dd id="summary-demand">-</dd></div>
+        </dl>
+      </div>
+
+      <div class="situjia-result-actions">
+        <button type="button" class="situjia-copy-btn" id="btn-copy-consult">
+          <span class="situjia-copy-icon">📋</span>
+          <span id="copy-btn-text">一键复制咨询需求</span>
+        </button>
+        <a href="tel:13980452338" class="situjia-call-btn">
+          <span>直接致电：13980452338 ↗</span>
+        </a>
+      </div>
+
+      <div class="situjia-result-back">
+        <button type="button" class="situjia-back-link" id="btn-back-to-edit">← 返回修改信息</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="official-footer">
+  <div class="wrap-shell footer-layout">
+    <div class="footer-brand">
+      <a class="official-brand" href="index.html">
+        <img alt="百医可依" height="40" src="assets/logo.png" width="40"/>
+        <span><strong>百医可依</strong><small>BAIYI KEYI</small></span>
+      </a>
+      <p>家门口看病，上百医可依。<br/>提供中医与民族医机构信息、居民门诊预约及机构预约管理服务。<br/><span class="footer-brand-corp">百医可依与思图佳均为成都思图佳科技有限公司旗下品牌。</span></p>
+      <a class="footer-contact" href="tel:13980452338">13980452338 ↗</a>
+    </div>
+    <nav class="footer-nav" aria-label="平台与产品">
+      <h3>平台与产品</h3>
+      <a href="index.html#platform">百医可依居民服务平台</a>
+      <a href="products/index.html">百医可依预约管理系统</a>
+      <a href="index.html#ecosystem">微信与 HarmonyOS 服务</a>
+      <a href="solutions/tcm-clinic/index.html">中医馆预约方案</a>
+    </nav>
+    <nav class="footer-nav" aria-label="机构服务">
+      <h3>机构服务</h3>
+      <a href="join/index.html">中医与民族医机构入驻</a>
+      <a href="#join" id="footer-btn-open-situjia-consult">其他医疗机构系统咨询</a>
+      <a href="help/wechat-setup/index.html">机构入驻与开通指南</a>
+      <a href="partners/index.html">医疗运营伙伴合作</a>
+    </nav>
+    <nav class="footer-nav" aria-label="内容与关于">
+      <h3>内容与关于</h3>
+      <a href="insights/tcm-booking-system-checklist/index.html">预约系统选型指南</a>
+      <a href="insights/index.html">行业洞察</a>
+      <a href="help/index.html">帮助与问答</a>
+      <a href="index.html#about">《医家列传》与传统医学文化</a>
+      <a href="about/index.html">关于百医可依</a>
+      <a href="https://www.situjia.cn/" rel="noopener noreferrer" target="_blank">思图佳官网 ↗</a>
+    </nav>
+  </div>
+  <div class="wrap-shell copyright">
+    <span>© 2026 百医可依 · 成都思图佳科技有限公司</span>
+    <span>百医可依提供中医与民族医医疗机构信息及线下门诊预约服务，实际医疗服务由相应机构提供；不开展互联网诊疗。</span>
+  </div>
+</footer>
+<script defer src="assets/site.js"></script>
+<script>
+(function () {
+  'use strict';
+  var stage = document.getElementById('resident-demo-stage');
+  // Guard: one controller per page, even if this script is evaluated twice.
+  if (!stage || stage.getAttribute('data-demo-ready') === '1') return;
+  stage.setAttribute('data-demo-ready', '1');
+
+  var featureItems = Array.prototype.slice.call(stage.querySelectorAll('.resident-feature-item'));
+  var sceneLayers = Array.prototype.slice.call(stage.querySelectorAll('.resident-scene-layer'));
+  var clusterEl = document.getElementById('resident-showcase-cluster');
+  var btnHighlight = document.getElementById('resident-btn-highlight');
+  var anchorDot = document.getElementById('resident-btn-anchor-dot');
+  var zoomConnector = document.getElementById('resident-zoom-connector');
+  var zoomConnectorPath = document.getElementById('resident-zoom-connector-path');
+  var zoomCard = document.getElementById('resident-zoom-card');
+  var zoomViewport = document.getElementById('resident-zoom-viewport');
+  var zoomImg = document.getElementById('resident-zoom-img');
+  var zoomBtnFocus = document.getElementById('resident-zoom-btn-focus');
+  var speechBubble = document.getElementById('resident-speech-bubble');
+  var mascotImg = document.getElementById('resident-mascot-img');
+
+  // Unified timeline: 4 steps x 4.4s = 17.6s loop.
+  // Each step = mascot frame 01 (0 - 2.2s) + mascot frame 02 (2.2 - 4.4s).
+  // Phone layer, highlight, zoom callout, list selection, bubble and mascot are ALL derived
+  // from the same state (activeStep + stepElapsed), driven by one requestAnimationFrame loop.
+  var STEP_MS = 4400;
+  var FRAME_MS = 2200;
+  var REDUCED_HOLD_MS = 900;
+  var MASCOT_DIR = 'assets/media/resident-service/mascot/';
+  var SHOT_DIR = 'assets/media/resident-service/screens/';
+
+  var STEPS = [
+    { // 0 查找机构
+      bubble: '先找机构，看看位置和医生',
+      mascot: ['s01-find-clinic-01.png', 's01-find-clinic-02.png'],
+      beats: [
+        { from: 0, to: 2200, layer: 0, src: 'resident-institution-list.png', w: 412, h: 771,
+          btn: { x: 2.9, y: 36.0, w: 94.2, h: 12.4 }, lit: [150, 2050],
+          zoom: { start: 350, end: 1800, crop: { x: 2.4, y: 35.8, w: 95.2, h: 13.0 }, offsetY: 65 } },
+        { from: 2200, to: 4400, layer: 1, src: 'resident-institution-detail.png', w: 408, h: 772,
+          btn: { x: 3.4, y: 58.6, w: 93.2, h: 16.8 }, lit: [2350, 4250],
+          zoom: { start: 2550, end: 4000, crop: { x: 2.8, y: 58.2, w: 94.4, h: 17.5 }, offsetY: 135 } }
+      ]
+    },
+    { // 1 查看排班
+      bubble: '这里可以看出诊时间',
+      mascot: ['s02-view-schedule-01.png', 's02-view-schedule-02.png'],
+      beats: [
+        { from: 0, to: 4400, layer: 2, src: 'resident-doctor-schedule.png', w: 409, h: 769,
+          btn: { x: 3.4, y: 53.0, w: 93.2, h: 21.2 }, lit: [200, 4250],
+          zoom: { start: 450, end: 4000, crop: { x: 3.4, y: 53.0, w: 93.2, h: 21.2 }, offsetY: 88 } }
+      ]
+    },
+    { // 2 家庭预约
+      bubble: '也能帮家人预约',
+      mascot: ['s03-family-booking-01.png', 's03-family-booking-02.png'],
+      beats: [
+        { from: 0, to: 2200, layer: 3, src: 'resident-medical-cards.png', w: 407, h: 769,
+          btn: { x: 2.9, y: 37.2, w: 93.2, h: 11.8 }, lit: [150, 2050],
+          zoom: { start: 350, end: 1800, crop: { x: 2.8, y: 36.8, w: 94.4, h: 12.8 }, offsetY: 76 } },
+        { from: 2200, to: 4400, layer: 4, src: 'resident-booking-confirm.png', w: 406, h: 770,
+          btn: { x: 3.2, y: 86.5, w: 93.6, h: 11.8 }, lit: [2350, 4250],
+          zoom: { start: 2550, end: 4000, crop: { x: 2.5, y: 86.5, w: 95.0, h: 12.2 }, offsetY: 260 } }
+      ]
+    },
+    { // 3 查看记录
+      bubble: ['预约后还能查看记录', '下次复诊，点「再次预约」'],
+      mascot: ['s04-view-records-01.png', 's04-view-records-02.png'],
+      beats: [
+        { from: 0, to: 2200, layer: 5, src: 'resident-service-notice.jpg', w: 1206, h: 2468,
+          btn: { x: 5.5, y: 12.2, w: 89.0, h: 36.0 }, lit: [150, 2050],
+          zoom: { start: 350, end: 1800, crop: { x: 6.0, y: 19.5, w: 88.0, h: 26.5 }, offsetY: 30 } },
+        { from: 2200, to: 4400, layer: 6, src: 'resident-booking-records.png', w: 391, h: 547,
+          btn: { x: 1.8, y: 15.3, w: 96.0, h: 27.8, dotTop: 78 }, lit: [2350, 4250],
+          zoom: { start: 2550, end: 4000, crop: { x: 2.3, y: 21.8, w: 94.6, h: 35.8 }, focus: { x: 71.87, y: 50.09, w: 22.51, h: 5.12 }, offsetY: 10 } }
+      ]
+    }
+  ];
+  var STEP_COUNT = STEPS.length;
+  var TOTAL_MS = STEP_MS * STEP_COUNT;
+
+  // ---- Single state source ----
+  var state = { activeStep: 0, activeFrame: 0, isPlaying: false };
+  var stepElapsed = 0;
+
+  var reducedQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var isReduced = reducedQuery ? reducedQuery.matches : false;
+  var assetsReady = false;
+  var inView = !('IntersectionObserver' in window);
+  var pageVisible = !document.hidden;
+  var manualPause = false;
+  var rafId = 0;
+  var lastTs = null;
+  var bubbleTimer = null;
+  var rendered = { step: -1, layer: -1, beat: null, zoomBeat: null, mascot: '', bubble: '' };
+
+  function beatAt(step, t) {
+    var beats = step.beats;
+    for (var i = 0; i < beats.length; i++) {
+      if (t >= beats[i].from && t < beats[i].to) return beats[i];
+    }
+    return beats[beats.length - 1];
+  }
+
+  function setBubble(text, immediate) {
+    if (!speechBubble) return;
+    if (bubbleTimer) { clearTimeout(bubbleTimer); bubbleTimer = null; }
+    if (immediate || isReduced) {
+      speechBubble.classList.remove('is-fading');
+      speechBubble.textContent = text;
+      return;
+    }
+    speechBubble.classList.add('is-fading');
+    bubbleTimer = setTimeout(function () {
+      bubbleTimer = null;
+      speechBubble.textContent = text;
+      speechBubble.classList.remove('is-fading');
+    }, 160);
+  }
+
+  function updateConnectorCurve() {
+    if (!clusterEl || !anchorDot || !zoomCard || !zoomConnectorPath) return;
+    if (window.innerWidth <= 860) return;
+    var cRect = clusterEl.getBoundingClientRect();
+    var dRect = anchorDot.getBoundingClientRect();
+    var laneEl = document.getElementById('resident-zoom-lane');
+    var lRect = laneEl ? laneEl.getBoundingClientRect() : zoomCard.getBoundingClientRect();
+    var zoomWidth = zoomCard.offsetWidth;
+    var zoomHeight = zoomCard.offsetHeight;
+    if (cRect.width === 0 || zoomWidth === 0) return;
+    var offsetY = parseFloat(zoomCard.style.getPropertyValue('--zoom-offset-y')) || 28;
+    var x1 = dRect.left + dRect.width / 2 - cRect.left;
+    var y1 = dRect.top + dRect.height / 2 - cRect.top;
+    var zoomLeft = lRect.left - cRect.left;
+    var zoomBottom = (lRect.top - cRect.top) + offsetY + zoomHeight;
+    var d, x2, y2;
+    if (y1 > zoomBottom + 4) {
+      x2 = Math.min(zoomLeft + zoomWidth - 28, Math.max(x1 + 24, zoomLeft + 68));
+      y2 = zoomBottom - 1;
+      var cx1 = x1 + (x2 - x1) * 0.72;
+      var cy2 = y2 + Math.min(34, (y1 - y2) * 0.55);
+      d = 'M ' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' C ' + cx1.toFixed(1) + ' ' + y1.toFixed(1) + ', ' + x2.toFixed(1) + ' ' + cy2.toFixed(1) + ', ' + x2.toFixed(1) + ' ' + y2.toFixed(1);
+    } else {
+      x2 = Math.min(zoomLeft + zoomWidth - 28, Math.max(x1 + 20, zoomLeft + 54));
+      y2 = zoomBottom - 1;
+      var cy1 = Math.max(y1, zoomBottom + 16);
+      d = 'M ' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' C ' + (x1 + 18).toFixed(1) + ' ' + cy1.toFixed(1) + ', ' + x2.toFixed(1) + ' ' + (zoomBottom + 14).toFixed(1) + ', ' + x2.toFixed(1) + ' ' + y2.toFixed(1);
+    }
+    zoomConnectorPath.setAttribute('d', d);
+  }
+
+  function prepareZoomCrop(beat) {
+    if (rendered.zoomBeat === beat) return;
+    rendered.zoomBeat = beat;
+    var c = beat.zoom.crop;
+    var aspect = (beat.w * (c.w / 100)) / (beat.h * (c.h / 100));
+    zoomCard.setAttribute('data-zoom-layer', String(beat.layer));
+    zoomViewport.style.aspectRatio = aspect.toFixed(4);
+    zoomImg.src = SHOT_DIR + beat.src;
+    zoomImg.style.width = ((100 / c.w) * 100).toFixed(3) + '%';
+    zoomImg.style.left = (-(c.x / c.w) * 100).toFixed(3) + '%';
+    zoomImg.style.top = (-(c.y / c.h) * 100).toFixed(3) + '%';
+    zoomCard.style.setProperty('--zoom-offset-y', (beat.zoom.offsetY || 28) + 'px');
+    if (zoomBtnFocus) {
+      var f = beat.zoom.focus;
+      if (f) {
+        zoomBtnFocus.style.left = (((f.x - c.x) / c.w) * 100).toFixed(3) + '%';
+        zoomBtnFocus.style.top = (((f.y - c.y) / c.h) * 100).toFixed(3) + '%';
+        zoomBtnFocus.style.width = ((f.w / c.w) * 100).toFixed(3) + '%';
+        zoomBtnFocus.style.height = ((f.h / c.h) * 100).toFixed(3) + '%';
+        zoomBtnFocus.classList.add('is-active');
+      } else {
+        zoomBtnFocus.classList.remove('is-active');
+      }
+    }
+  }
+
+  function setZoomOpen(open) {
+    zoomCard.classList.toggle('is-open', open);
+    if (zoomConnector) zoomConnector.classList.toggle('is-open', open);
+  }
+
+  // Render everything from (activeStep, stepElapsed). No other code path mutates the visuals.
+  function render(immediate) {
+    var step = STEPS[state.activeStep];
+    var t = stepElapsed;
+    state.activeFrame = t < FRAME_MS ? 0 : 1;
+    var beat = beatAt(step, t);
+
+    if (rendered.step !== state.activeStep) {
+      rendered.step = state.activeStep;
+      featureItems.forEach(function (item, idx) {
+        var on = idx === state.activeStep;
+        item.classList.toggle('is-active', on);
+        if (on) { item.setAttribute('aria-current', 'step'); } else { item.removeAttribute('aria-current'); }
+      });
+    }
+
+    var bubbleText = Array.isArray(step.bubble) ? step.bubble[state.activeFrame] : step.bubble;
+    if (rendered.bubble !== bubbleText) {
+      var first = rendered.bubble === '';
+      rendered.bubble = bubbleText;
+      setBubble(bubbleText, first || immediate);
+    }
+
+    if (rendered.layer !== beat.layer) {
+      rendered.layer = beat.layer;
+      sceneLayers.forEach(function (layer, idx) {
+        layer.classList.toggle('is-active', idx === beat.layer);
+      });
+    }
+
+    if (rendered.beat !== beat) {
+      rendered.beat = beat;
+      btnHighlight.style.left = beat.btn.x + '%';
+      btnHighlight.style.top = beat.btn.y + '%';
+      btnHighlight.style.width = beat.btn.w + '%';
+      btnHighlight.style.height = beat.btn.h + '%';
+      btnHighlight.style.setProperty('--dot-top', (beat.btn.dotTop || 50) + '%');
+    }
+    btnHighlight.classList.toggle('is-lit', t >= beat.lit[0] && t <= beat.lit[1]);
+
+    prepareZoomCrop(beat);
+    var zoomOn = t >= beat.zoom.start && t <= beat.zoom.end;
+    if (zoomOn) updateConnectorCurve();
+    setZoomOpen(zoomOn);
+
+    var src = MASCOT_DIR + step.mascot[state.activeFrame];
+    if (rendered.mascot !== src) {
+      rendered.mascot = src;
+      mascotImg.src = src;
+    }
+  }
+
+  function advance(delta) {
+    stepElapsed += delta;
+    while (stepElapsed >= STEP_MS) {
+      stepElapsed -= STEP_MS;
+      state.activeStep = (state.activeStep + 1) % STEP_COUNT;
+    }
+  }
+
+  function tick(now) {
+    rafId = 0;
+    if (!state.isPlaying) { lastTs = null; return; }
+    if (lastTs === null) lastTs = now;
+    var delta = Math.min(80, Math.max(0, now - lastTs));
+    lastTs = now;
+    advance(delta);
+    render(false);
+    rafId = window.requestAnimationFrame(tick);
+  }
+
+  function updateRunState() {
+    state.isPlaying = assetsReady && inView && pageVisible && !isReduced && !manualPause;
+    if (state.isPlaying && !rafId) {
+      lastTs = null;
+      rafId = window.requestAnimationFrame(tick);
+    } else if (!state.isPlaying && rafId) {
+      window.cancelAnimationFrame(rafId);
+      rafId = 0;
+      lastTs = null;
+    }
+  }
+
+  function goToStep(idx) {
+    state.activeStep = ((idx % STEP_COUNT) + STEP_COUNT) % STEP_COUNT;
+    stepElapsed = isReduced ? REDUCED_HOLD_MS : 0;
+    lastTs = null;
+    render(false);
+  }
+
+  // ---- User interaction: click / keyboard selects a step and resets its timeline ----
+  featureItems.forEach(function (item, idx) {
+    item.setAttribute('tabindex', '0');
+    item.addEventListener('click', function () { goToStep(idx); });
+    item.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goToStep(idx); }
+    });
+  });
+
+  window.addEventListener('resize', function () {
+    if (zoomCard.classList.contains('is-open')) updateConnectorCurve();
+  });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        inView = entry.isIntersecting && (entry.intersectionRatio > 0.08 || (entry.intersectionRect && entry.intersectionRect.height > 80));
+      });
+      updateRunState();
+    }, { threshold: [0, 0.05, 0.12, 0.25] }).observe(stage);
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    pageVisible = !document.hidden;
+    updateRunState();
+  });
+
+  if (reducedQuery && reducedQuery.addEventListener) {
+    reducedQuery.addEventListener('change', function (e) {
+      isReduced = e.matches;
+      if (isReduced) { stepElapsed = REDUCED_HOLD_MS; render(true); }
+      updateRunState();
+    });
+  }
+
+  // ---- Preload + decode all 8 mascot frames and all phone screenshots before autoplay ----
+  var preloadCache = [];
+  function preload(url) {
+    return new Promise(function (resolve) {
+      var img = new Image();
+      preloadCache.push(img);
+      img.onload = function () {
+        if (img.decode) { img.decode().then(resolve, resolve); } else { resolve(); }
+      };
+      img.onerror = resolve;
+      img.src = url;
+    });
+  }
+  var urls = [];
+  STEPS.forEach(function (s) {
+    s.mascot.forEach(function (m) { urls.push(MASCOT_DIR + m); });
+    s.beats.forEach(function (b) { urls.push(SHOT_DIR + b.src); });
+  });
+
+  if (isReduced) stepElapsed = REDUCED_HOLD_MS;
+  render(true);
+  Promise.all(urls.map(preload)).then(function () {
+    assetsReady = true;
+    updateRunState();
+  });
+
+  // Inspection / QA handle (reads and drives the same single state).
+  window.__bykyResidentDemo = {
+    goToStep: goToStep,
+    seekMs: function (ms) {
+      var t = ((ms % TOTAL_MS) + TOTAL_MS) % TOTAL_MS;
+      state.activeStep = Math.floor(t / STEP_MS);
+      stepElapsed = t - state.activeStep * STEP_MS;
+      lastTs = null;
+      render(true);
+    },
+    pause: function () { manualPause = true; updateRunState(); },
+    resume: function () { manualPause = false; updateRunState(); },
+    getState: function () {
+      return {
+        activeStep: state.activeStep,
+        activeFrame: state.activeFrame,
+        isPlaying: state.isPlaying,
+        stepElapsed: Math.floor(stepElapsed),
+        assetsReady: assetsReady,
+        activeLayer: rendered.layer,
+        activeListIndex: featureItems.findIndex(function (el) { return el.classList.contains('is-active'); }),
+        mascotSrc: mascotImg.getAttribute('src'),
+        bubbleText: speechBubble ? speechBubble.textContent : '',
+        zoomOpen: zoomCard.classList.contains('is-open'),
+        highlightLit: btnHighlight.classList.contains('is-lit')
+      };
+    }
+  };
+})();
+</script>
+<script id="about-video-script">
+(function() {
+  'use strict';
+  function initAboutVideo() {
+    var video = document.getElementById('about-culture-video');
+    var soundBtn = document.getElementById('about-sound-toggle');
+    if (!video || !soundBtn) return;
+
+    var iconMuted = soundBtn.querySelector('.icon-muted');
+    var iconUnmuted = soundBtn.querySelector('.icon-unmuted');
+
+    video.muted = true;
+    soundBtn.setAttribute('aria-pressed', 'false');
+    soundBtn.setAttribute('aria-label', '开启视频声音');
+    if (iconMuted) iconMuted.style.display = 'block';
+    if (iconUnmuted) iconUnmuted.style.display = 'none';
+
+    soundBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (video.muted) {
+        video.muted = false;
+        soundBtn.setAttribute('aria-pressed', 'true');
+        soundBtn.setAttribute('aria-label', '关闭视频声音');
+        if (iconMuted) iconMuted.style.display = 'none';
+        if (iconUnmuted) iconUnmuted.style.display = 'block';
+        if (video.paused) {
+          video.play().catch(function(err) { console.warn('Play error:', err); });
+        }
+      } else {
+        video.muted = true;
+        soundBtn.setAttribute('aria-pressed', 'false');
+        soundBtn.setAttribute('aria-label', '开启视频声音');
+        if (iconMuted) iconMuted.style.display = 'block';
+        if (iconUnmuted) iconUnmuted.style.display = 'none';
+      }
+    });
+
+    var playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(function(err) {
+        console.warn('Autoplay prevented by browser:', err);
+        video.muted = true;
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            if (video.paused) {
+              video.play().catch(function() {});
+            }
+          } else {
+            if (!video.paused) {
+              video.pause();
+            }
+          }
+        });
+      }, { threshold: 0.15 });
+      observer.observe(video);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAboutVideo);
+  } else {
+    initAboutVideo();
+  }
+})();
+</script>
+
+<script id="situjia-consult-modal-script">
+(function() {
+  'use strict';
+
+  var modal = document.getElementById('situjia-consult-modal');
+  var openBtn = document.getElementById('btn-open-situjia-consult');
+  var footerOpenBtn = document.getElementById('footer-btn-open-situjia-consult');
+  var closeBtn = document.getElementById('btn-close-situjia-modal');
+  var backdrop = document.getElementById('situjia-modal-backdrop');
+  var form = document.getElementById('situjia-consult-form');
+  var resultBox = document.getElementById('situjia-result-box');
+  var copyBtn = document.getElementById('btn-copy-consult');
+  var backBtn = document.getElementById('btn-back-to-edit');
+
+  if (!modal || !openBtn) return;
+
+  var lastFocusedElement = null;
+
+  // Fields
+  var fieldOrgName = document.getElementById('consult-org-name');
+  var fieldOrgType = document.getElementById('consult-org-type');
+  var fieldContactName = document.getElementById('consult-contact-name');
+  var fieldPhone = document.getElementById('consult-phone');
+  var fieldDemand = document.getElementById('consult-demand');
+
+  // Error spans
+  var errOrgName = document.getElementById('err-org-name');
+  var errOrgType = document.getElementById('err-org-type');
+  var errContactName = document.getElementById('err-contact-name');
+  var errPhone = document.getElementById('err-phone');
+
+  function openModal() {
+    lastFocusedElement = document.activeElement;
+    modal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+    if (fieldOrgName) {
+      setTimeout(function() {
+        fieldOrgName.focus();
+      }, 50);
+    }
+  }
+
+  function closeModal() {
+    modal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
+    }
+  }
+
+  function clearFieldError(input, errorEl) {
+    if (input) input.classList.remove('is-invalid');
+    if (errorEl) errorEl.textContent = '';
+  }
+
+  function setFieldError(input, errorEl, msg) {
+    if (input) input.classList.add('is-invalid');
+    if (errorEl) errorEl.textContent = msg;
+  }
+
+  // Realtime validation feedback
+  if (fieldOrgName) {
+    fieldOrgName.addEventListener('input', function() {
+      if (fieldOrgName.value.trim().length >= 2) clearFieldError(fieldOrgName, errOrgName);
+    });
+  }
+  if (fieldOrgType) {
+    fieldOrgType.addEventListener('change', function() {
+      if (fieldOrgType.value) clearFieldError(fieldOrgType, errOrgType);
+    });
+  }
+  if (fieldContactName) {
+    fieldContactName.addEventListener('input', function() {
+      if (fieldContactName.value.trim().length >= 2) clearFieldError(fieldContactName, errContactName);
+    });
+  }
+  if (fieldPhone) {
+    fieldPhone.addEventListener('input', function() {
+      var val = fieldPhone.value.trim();
+      if (/^1[3-9]\d{9}$/.test(val)) clearFieldError(fieldPhone, errPhone);
+    });
+  }
+
+  function validateForm() {
+    var isValid = true;
+    var firstInvalid = null;
+
+    var orgNameVal = fieldOrgName ? fieldOrgName.value.trim() : '';
+    if (!orgNameVal || orgNameVal.length < 2) {
+      setFieldError(fieldOrgName, errOrgName, '请填写有效的医疗机构名称（至少2个字符）');
+      isValid = false;
+      if (!firstInvalid) firstInvalid = fieldOrgName;
+    } else {
+      clearFieldError(fieldOrgName, errOrgName);
+    }
+
+    var orgTypeVal = fieldOrgType ? fieldOrgType.value : '';
+    if (!orgTypeVal) {
+      setFieldError(fieldOrgType, errOrgType, '请选择机构类型');
+      isValid = false;
+      if (!firstInvalid) firstInvalid = fieldOrgType;
+    } else {
+      clearFieldError(fieldOrgType, errOrgType);
+    }
+
+    var contactNameVal = fieldContactName ? fieldContactName.value.trim() : '';
+    if (!contactNameVal || contactNameVal.length < 2) {
+      setFieldError(fieldContactName, errContactName, '请填写联系人姓名（至少2个字符）');
+      isValid = false;
+      if (!firstInvalid) firstInvalid = fieldContactName;
+    } else {
+      clearFieldError(fieldContactName, errContactName);
+    }
+
+    var phoneVal = fieldPhone ? fieldPhone.value.trim() : '';
+    if (!phoneVal) {
+      setFieldError(fieldPhone, errPhone, '请填写联系电话');
+      isValid = false;
+      if (!firstInvalid) firstInvalid = fieldPhone;
+    } else if (!/^1[3-9]\d{9}$/.test(phoneVal)) {
+      setFieldError(fieldPhone, errPhone, '请填写有效的11位手机号码（1开头）');
+      isValid = false;
+      if (!firstInvalid) firstInvalid = fieldPhone;
+    } else {
+      clearFieldError(fieldPhone, errPhone);
+    }
+
+    if (firstInvalid) {
+      firstInvalid.focus();
+    }
+    return isValid;
+  }
+
+  var currentConsultText = '';
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!validateForm()) return;
+
+      var orgName = fieldOrgName.value.trim();
+      var orgType = fieldOrgType.value;
+      var contactName = fieldContactName.value.trim();
+      var phone = fieldPhone.value.trim();
+      var demand = (fieldDemand && fieldDemand.value.trim()) ? fieldDemand.value.trim() : '未填写（待对接交流）';
+
+      var elSummaryOrgName = document.getElementById('summary-org-name');
+      var elSummaryOrgType = document.getElementById('summary-org-type');
+      var elSummaryContactName = document.getElementById('summary-contact-name');
+      var elSummaryPhone = document.getElementById('summary-phone');
+      var elSummaryDemand = document.getElementById('summary-demand');
+
+      if (elSummaryOrgName) elSummaryOrgName.textContent = orgName;
+      if (elSummaryOrgType) elSummaryOrgType.textContent = orgType;
+      if (elSummaryContactName) elSummaryContactName.textContent = contactName;
+      if (elSummaryPhone) elSummaryPhone.textContent = phone;
+      if (elSummaryDemand) elSummaryDemand.textContent = demand;
+
+      currentConsultText = '【思图佳·医疗机构预约系统咨询需求】\n' +
+        '• 医疗机构：' + orgName + '\n' +
+        '• 机构类型：' + orgType + '\n' +
+        '• 联 系 人：' + contactName + '\n' +
+        '• 联系电话：' + phone + '\n' +
+        '• 需求简述：' + demand + '\n' +
+        '• 服务主体：成都思图佳科技有限公司';
+
+      form.style.display = 'none';
+      if (resultBox) {
+        resultBox.removeAttribute('hidden');
+        resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }
+
+  if (backBtn) {
+    backBtn.addEventListener('click', function() {
+      if (resultBox) resultBox.setAttribute('hidden', '');
+      if (form) form.style.display = 'block';
+    });
+  }
+
+  function fallbackCopy(text) {
+    var copyTextSpan = document.getElementById('copy-btn-text');
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      if (copyTextSpan) copyTextSpan.textContent = '已成功复制需求文本！';
+      if (copyBtn) copyBtn.style.background = '#1a5933';
+      setTimeout(function() {
+        if (copyTextSpan) copyTextSpan.textContent = '一键复制咨询需求';
+        if (copyBtn) copyBtn.style.background = '';
+      }, 3000);
+    } catch (err) {
+      alert('请长按或手动复制已生成的咨询需求');
+    }
+    document.body.removeChild(ta);
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function() {
+      var copyTextSpan = document.getElementById('copy-btn-text');
+      var textToCopy = currentConsultText;
+      if (!textToCopy) return;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(function() {
+          if (copyTextSpan) copyTextSpan.textContent = '已成功复制需求文本！';
+          copyBtn.style.background = '#1a5933';
+          setTimeout(function() {
+            if (copyTextSpan) copyTextSpan.textContent = '一键复制咨询需求';
+            copyBtn.style.background = '';
+          }, 3000);
+        }).catch(function() {
+          fallbackCopy(textToCopy);
+        });
+      } else {
+        fallbackCopy(textToCopy);
+      }
+    });
+  }
+
+  openBtn.addEventListener('click', openModal);
+  if (footerOpenBtn) {
+    footerOpenBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      openModal();
+    });
+  }
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (backdrop) backdrop.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function(e) {
+    if (modal.hasAttribute('hidden')) return;
+
+    if (e.key === 'Escape' || e.keyCode === 27) {
+      closeModal();
+      return;
+    }
+
+    if (e.key === 'Tab' || e.keyCode === 9) {
+      var focusable = modal.querySelectorAll('button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href]');
+      var focusableArr = Array.prototype.slice.call(focusable).filter(function(el) {
+        return el.offsetParent !== null;
+      });
+      if (focusableArr.length === 0) return;
+      var firstFocusable = focusableArr[0];
+      var lastFocusable = focusableArr[focusableArr.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable.focus();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable.focus();
+        }
+      }
+    }
+  });
+})();
+</script>
+<script id="wechat-stand-script">
+(function() {
+  'use strict';
+
+  var section = document.getElementById('ecosystem');
+  var standCard = document.getElementById('wechat-stand-card');
+
+  if (!section || !standCard) return;
+
+  var hasTriggered = false;
+  function triggerStanding() {
+    if (hasTriggered) return;
+    hasTriggered = true;
+    standCard.classList.add('is-standing');
+  }
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          triggerStanding();
+          observer.unobserve(entry.target);
+          observer.disconnect();
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -8% 0px',
+      threshold: 0.18
+    });
+    observer.observe(section);
+  } else {
+    triggerStanding();
+  }
+})();
+</script>
+</body></html>
